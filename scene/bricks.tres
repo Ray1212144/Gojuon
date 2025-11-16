@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=48 format=3 uid="uid://cj1vvag8n1wbe"]
+[gd_resource type="TileSet" load_steps=50 format=3 uid="uid://cj1vvag8n1wbe"]
 
 [ext_resource type="PackedScene" uid="uid://bquews21w5lsr" path="res://scene/kana_bricks/brick_あ.tscn" id="1_ipt73"]
 [ext_resource type="PackedScene" uid="uid://dncu20ijg7uu5" path="res://scene/kana_bricks/brick_こ.tscn" id="2_nh0ht"]
@@ -46,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://bubohykob76g3" path="res://scene/kana_bricks/brick_き.tscn" id="44_8d5o6"]
 [ext_resource type="PackedScene" uid="uid://cmo5saltc7hfn" path="res://scene/kana_bricks/brick_く.tscn" id="45_ewcub"]
 [ext_resource type="PackedScene" uid="uid://db010wh3gj5ih" path="res://scene/kana_bricks/brick_け.tscn" id="46_4fsbc"]
+[ext_resource type="PackedScene" uid="uid://di15rqv8s6tl1" path="res://scene/fill.tscn" id="47_d1lch"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_nh0ht"]
 scenes/1/scene = ExtResource("1_ipt73")
@@ -95,5 +96,9 @@ scenes/44/scene = ExtResource("39_xrpue")
 scenes/45/scene = ExtResource("40_xnrpm")
 scenes/46/scene = ExtResource("41_yxtpf")
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mxkbb"]
+scenes/1/scene = ExtResource("47_d1lch")
+
 [resource]
 sources/0 = SubResource("TileSetScenesCollectionSource_nh0ht")
+sources/1 = SubResource("TileSetScenesCollectionSource_mxkbb")

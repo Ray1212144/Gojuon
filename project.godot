@@ -20,6 +20,12 @@ config/icon="res://asset/icon.svg"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[global_group]
+
+brick=""
+Fill=""
+ExplodeArea2D=""
+
 [input]
 
 ui_left={

@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://o55eh0r742kd"]
+[gd_scene load_steps=6 format=4 uid="uid://o55eh0r742kd"]
 
 [ext_resource type="Script" uid="uid://bmiy26g2nt7e" path="res://script/player.gd" id="1_swhd1"]
 [ext_resource type="Texture2D" uid="uid://b50sekkr7evd" path="res://asset/icon.svg" id="2_kd301"]
-[ext_resource type="PackedScene" uid="uid://di15rqv8s6tl1" path="res://scene/fill.tscn" id="4_sytsc"]
+[ext_resource type="PackedScene" uid="uid://dl13gwq18wsw7" path="res://scene/explode_area.tscn" id="4_swhd1"]
 [ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://scene/bricks.tres" id="5_kd301"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_foyw7"]
@@ -22,25 +22,63 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_kd301")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(2, 2)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(68, -14)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 0, 0, 0, 0, 6, 0)
+tile_map_data = PackedByteArray("AAAAAP3/AAAAAAAABgACAPT/AAAAAAAAAQACAPf/AAAAAAAAAQACAPr/AAAAAAAAAQACAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAEAP3/AAAAAAAAAQAEAPr/AAAAAAAAAQAEAPf/AAAAAAAAAQAEAPT/AAAAAAAAAQAAAPT/AQAAAAAAAQAAAPf/AQAAAAAAAQAAAPr/AQAAAAAAAQAAAAAAAQAAAAAAAQACAP3/AQAAAAAAAQAGAPT/AAAAAAAAAQAGAPf/AAAAAAAAAQAGAPr/AAAAAAAAAQAGAP3/AAAAAAAAAQAGAAAAAAAAAAAAAQAIAAAAAQAAAAAAAQAIAP3/AAAAAAAAAQAIAPr/AAAAAAAAAQAIAPf/AAAAAAAAAQAIAPT/AAAAAAAAAQAKAPT/AAAAAAAAAQAKAPf/AAAAAAAAAQAKAPr/AAAAAAAAAQAKAP3/AAAAAAAAAQAKAAAAAAAAAAAAAQAMAAAAAAAAAAAAAQAMAPr/AAAAAAAAAQAMAP3/AQAAAAAAAQAMAPf/AQAAAAAAAQAMAPT/AQAAAAAAAQAOAPT/AAAAAAAAAQAOAPf/AAAAAAAAAQAOAPr/AAAAAAAAAQAOAP3/AQAAAAAAAQAOAAAAAAAAAAAAAQA=")
 tile_set = ExtResource("5_kd301")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="ExplodeArea" type="Node2D" parent="."]
 
-[node name="Fill" parent="Node2D" instance=ExtResource("4_sytsc")]
-position = Vector2(76, -4)
+[node name="ExplodeArea" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(120, -14)
+scale = Vector2(1.1262366, 0.2489944)
 
-[node name="Fill2" parent="Node2D" instance=ExtResource("4_sytsc")]
-position = Vector2(75, -104)
+[node name="ExplodeArea2" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(249, -13)
+scale = Vector2(1.1262366, 0.2489944)
 
-[node name="Fill3" parent="Node2D" instance=ExtResource("4_sytsc")]
-position = Vector2(76, -152)
+[node name="ExplodeArea3" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(191, -61)
+scale = Vector2(1.8062365, 0.2489944)
 
-[node name="Fill4" parent="Node2D" instance=ExtResource("4_sytsc")]
-position = Vector2(77, -201)
+[node name="ExplodeArea5" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(158, -157)
+scale = Vector2(1.8062365, 0.2489944)
 
-[node name="Fill5" parent="Node2D" instance=ExtResource("4_sytsc")]
-position = Vector2(107, -56)
+[node name="ExplodeArea6" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(156.00002, -205.00002)
+scale = Vector2(1.8062365, 0.2489944)
+
+[node name="ExplodeArea7" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(282, -204.00002)
+scale = Vector2(0.52623403, 0.2489944)
+
+[node name="ExplodeArea8" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(283, -156.00002)
+scale = Vector2(0.52623403, 0.2489944)
+
+[node name="ExplodeArea9" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(301, -85.00001)
+rotation = 1.5494674
+scale = Vector2(0.52623403, 0.2489944)
+
+[node name="ExplodeArea10" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(283, -59.00001)
+rotation = -0.031567693
+scale = Vector2(0.52623403, 0.2489944)
+
+[node name="ExplodeArea11" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(74.999985, -83.99999)
+rotation = -1.5723844
+scale = Vector2(0.52623403, 0.2489944)
+
+[node name="ExplodeArea12" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(80.00001, -35)
+rotation = -1.5723844
+scale = Vector2(0.52623403, 0.2489944)
+
+[node name="ExplodeArea4" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(173, -107)
+scale = Vector2(2.1662364, 0.2489944)

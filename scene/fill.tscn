@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://di15rqv8s6tl1"]
+[gd_scene load_steps=5 format=3 uid="uid://di15rqv8s6tl1"]
 
 [ext_resource type="Script" uid="uid://babf4cr0e68a8" path="res://script/fill.gd" id="1_iel58"]
 [ext_resource type="Texture2D" uid="uid://d1m2asmkrx0qg" path="res://asset/鐮栧潡.png" id="2_0na5l"]
+[ext_resource type="Script" uid="uid://crom8tyb61qbr" path="res://scene/set_kana_button.gd" id="3_utdu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bo08i"]
 size = Vector2(32, 50)
 
-[node name="Fill" type="StaticBody2D"]
+[node name="Fill" type="StaticBody2D" node_paths=PackedStringArray("label", "button_container") groups=["Fill"]]
 script = ExtResource("1_iel58")
+label = NodePath("Label")
+button_container = NodePath("ButtonContainer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_0na5l")
@@ -16,7 +19,68 @@ texture = ExtResource("2_0na5l")
 shape = SubResource("RectangleShape2D_bo08i")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -20.0
+offset_left = -13.0
 offset_top = -22.0
-offset_right = 20.0
+offset_right = 27.0
 offset_bottom = 1.0
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -26.0
+offset_right = -7.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.8678958, 6.3802385)
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+visible = false
+z_index = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "あ"
+script = ExtResource("3_utdu3")
+size = Vector2(100, 50)
+kana_selection = 0
+
+[node name="Button2" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "い"
+script = ExtResource("3_utdu3")
+size = Vector2(100, 50)
+kana_selection = 1
+
+[node name="Button3" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "え"
+script = ExtResource("3_utdu3")
+size = Vector2(100, 50)
+kana_selection = 3
+
+[node name="Button4" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "お"
+script = ExtResource("3_utdu3")
+size = Vector2(100, 50)
+kana_selection = 4
+
+[node name="Button5" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "う"
+script = ExtResource("3_utdu3")
+size = Vector2(100, 50)
+kana_selection = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 # 移动速度（像素/秒）
-@export var speed: float = 300.0
+@export var speed: float = 600
 
 func _physics_process(_delta: float) -> void:
 	# 获取输入方向
