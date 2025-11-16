@@ -1,26 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://cilbvkc5qyekp"]
+[gd_scene load_steps=2 format=3 uid="uid://cfgr7dxgookjy"]
 
-[ext_resource type="Script" uid="uid://d0hqagi02i4mr" path="res://script/bric.gd" id="1_uo15f"]
-[ext_resource type="Texture2D" uid="uid://d1m2asmkrx0qg" path="res://asset/鐮栧潡.png" id="2_8pxmf"]
+[ext_resource type="PackedScene" uid="uid://cmnwfv6qsl0sd" path="res://scene/brick.tscn" id="1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo08i"]
-size = Vector2(32, 50)
-
-[node name="Brick_お" type="StaticBody2D"]
-script = ExtResource("1_uo15f")
-preset_kana_selection = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_8pxmf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_bo08i")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -21.0
-offset_right = 20.0
-offset_bottom = 2.0
-text = "お"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Brick_お" instance=ExtResource("1")]
