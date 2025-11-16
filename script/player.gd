@@ -18,3 +18,10 @@ func _physics_process(_delta: float) -> void:
 	
 	# 应用移动
 	move_and_slide()
+
+
+
+
+
+func _on_reset_pressed() -> void:
+	get_tree().reload_current_scene()

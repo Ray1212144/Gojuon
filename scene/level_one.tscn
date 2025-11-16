@@ -24,6 +24,13 @@ texture = ExtResource("2_kd301")
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(2, 2)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D"]
+
+[node name="Reset" type="Button" parent="CharacterBody2D/CanvasLayer"]
+offset_right = 316.0
+offset_bottom = 156.0
+text = "reset"
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(68, -14)
 tile_map_data = PackedByteArray("AAAAAP3/AAAAAAAABgACAPT/AAAAAAAAAQACAPf/AAAAAAAAAQACAPr/AAAAAAAAAQACAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAEAP3/AAAAAAAAAQAEAPr/AAAAAAAAAQAEAPf/AAAAAAAAAQAEAPT/AAAAAAAAAQAAAPT/AQAAAAAAAQAAAPf/AQAAAAAAAQAAAPr/AQAAAAAAAQAAAAAAAQAAAAAAAQACAP3/AQAAAAAAAQAGAPT/AAAAAAAAAQAGAPf/AAAAAAAAAQAGAPr/AAAAAAAAAQAGAP3/AAAAAAAAAQAGAAAAAAAAAAAAAQAIAAAAAQAAAAAAAQAIAP3/AAAAAAAAAQAIAPr/AAAAAAAAAQAIAPf/AAAAAAAAAQAIAPT/AAAAAAAAAQAKAPT/AAAAAAAAAQAKAPf/AAAAAAAAAQAKAPr/AAAAAAAAAQAKAP3/AAAAAAAAAQAKAAAAAAAAAAAAAQAMAAAAAAAAAAAAAQAMAPr/AAAAAAAAAQAMAP3/AQAAAAAAAQAMAPf/AQAAAAAAAQAMAPT/AQAAAAAAAQAOAPT/AAAAAAAAAQAOAPf/AAAAAAAAAQAOAPr/AAAAAAAAAQAOAP3/AQAAAAAAAQAOAAAAAAAAAAAAAQA=")
@@ -38,14 +45,17 @@ scale = Vector2(1.1262366, 0.2489944)
 [node name="ExplodeArea2" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
 position = Vector2(249, -13)
 scale = Vector2(1.1262366, 0.2489944)
+target_kana_selection = 2
 
 [node name="ExplodeArea3" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
 position = Vector2(191, -61)
 scale = Vector2(1.8062365, 0.2489944)
+target_kana_selection = 2
 
 [node name="ExplodeArea5" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
 position = Vector2(158, -157)
 scale = Vector2(1.8062365, 0.2489944)
+target_kana_selection = 4
 
 [node name="ExplodeArea6" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
 position = Vector2(156.00002, -205.00002)
@@ -54,31 +64,45 @@ scale = Vector2(1.8062365, 0.2489944)
 [node name="ExplodeArea7" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
 position = Vector2(282, -204.00002)
 scale = Vector2(0.52623403, 0.2489944)
+target_kana_selection = 4
 
 [node name="ExplodeArea8" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
 position = Vector2(283, -156.00002)
 scale = Vector2(0.52623403, 0.2489944)
+target_kana_selection = 2
 
 [node name="ExplodeArea9" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
 position = Vector2(301, -85.00001)
 rotation = 1.5494674
 scale = Vector2(0.52623403, 0.2489944)
+target_kana_selection = 3
 
 [node name="ExplodeArea10" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
 position = Vector2(283, -59.00001)
 rotation = -0.031567693
 scale = Vector2(0.52623403, 0.2489944)
+target_kana_selection = 1
+
+[node name="ExplodeArea13" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
+position = Vector2(286.00003, -59)
+rotation = -0.031567693
+scale = Vector2(0.52623403, 0.2489944)
+target_kana_selection = 3
 
 [node name="ExplodeArea11" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
 position = Vector2(74.999985, -83.99999)
 rotation = -1.5723844
 scale = Vector2(0.52623403, 0.2489944)
+target_kana_selection = 1
 
 [node name="ExplodeArea12" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
-position = Vector2(80.00001, -35)
+position = Vector2(75.00001, -36.000004)
 rotation = -1.5723844
 scale = Vector2(0.52623403, 0.2489944)
 
 [node name="ExplodeArea4" parent="ExplodeArea" instance=ExtResource("4_swhd1")]
 position = Vector2(173, -107)
 scale = Vector2(2.1662364, 0.2489944)
+target_kana_selection = 1
+
+[connection signal="pressed" from="CharacterBody2D/CanvasLayer/Reset" to="CharacterBody2D" method="_on_reset_pressed"]
