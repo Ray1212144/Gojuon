@@ -25,6 +25,7 @@ window/size/viewport_height=1080
 brick=""
 Fill=""
 ExplodeArea2D=""
+CheckArea2D=""
 
 [input]
 

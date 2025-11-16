@@ -38,6 +38,8 @@ func set_kana(selection: int):
 	kana_selection = selection
 	# 更新 Fill 的显示
 	update_display()
+	# 通知所有重叠的 CheckArea2D
+	notify_overlapping_check_areas()
 
 func update_display():
 	if kana_selection != -1 and kana_selection < KANA_SYMBOLS.size():
@@ -53,14 +55,40 @@ func _on_kana_button_pressed(button: Button):
 		var button_kana = button.get_kana_selection()
 		set_kana(button_kana)
 		print("Fill 的五十音设置为: ", KANA_SYMBOLS[button_kana])
+	
 	# 隐藏按钮容器
 	button_container.hide()
-	check_explode()
+
 func _on_button_pressed() -> void:
 	# 处理点击逻辑
 	button_container.show()
 
-func check_explode():
-	var areas : Array[Node] =  get_tree().get_nodes_in_group("ExplodeArea2D")
-	for i:ExplodeArea2D in areas:
-		i.check_explode()
+# 通知所有重叠的 CheckArea2D
+func notify_overlapping_check_areas():
+	print("Fill 通知重叠的 CheckArea2D...")
+	
+	# 获取所有 CheckArea2D
+	var all_check_areas = get_tree().get_nodes_in_group("CheckArea2D")
+	var overlapping_check_areas = []
+	
+	# 找出所有与当前 Fill 重叠的 CheckArea2D
+	for check_area in all_check_areas:
+		if check_area.overlaps_body(self):
+			print("Fill 与 CheckArea2D 重叠: ", check_area.name)
+			overlapping_check_areas.append(check_area)
+	
+	print("找到 ", overlapping_check_areas.size(), " 个重叠的 CheckArea2D")
+	
+	# 通知每个重叠的 CheckArea2D
+	for check_area in overlapping_check_areas:
+		check_area.on_fill_updated(self)
+
+# 获取五十音符号（供外部调用）
+func get_kana_symbol() -> String:
+	if kana_selection != -1 and kana_selection < KANA_SYMBOLS.size():
+		return KANA_SYMBOLS[kana_selection]
+	return "？"
+
+# 获取五十音选择（供外部调用）
+func get_kana_selection() -> int:
+	return kana_selection
