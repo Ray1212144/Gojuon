@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gojuon"
-run/main_scene="uid://o55eh0r742kd"
+run/main_scene="uid://cmnwfv6qsl0sd"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://asset/icon.svg"
 

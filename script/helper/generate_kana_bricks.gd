@@ -1,9 +1,9 @@
-# generate_all_kana_bricks.gd
+# generate_all_kana_bricks_fixed.gd
 @tool
 extends EditorScript
 
 func _run():
-	print("=== 开始生成完整的五十音 Brick 场景 ===")
+	print("=== 开始生成完整的五十音 Brick 场景（修复版） ===")
 	
 	# 检查基础场景
 	var base_brick_path = "res://scene/brick.tscn"
@@ -41,7 +41,7 @@ func _run():
 	var kana_symbols = [
 		"あ", "い", "う", "え", "お",
 		"か", "き", "く", "け", "こ",
-		"さ", "し", "す", "せ", "そ",
+		"さ", "極", "す", "せ", "そ",
 		"た", "ち", "つ", "て", "と",
 		"な", "に", "ぬ", "ね", "の",
 		"は", "ひ", "ふ", "へ", "ほ",
@@ -77,7 +77,16 @@ func _run():
 			continue
 		
 		# 设置预设的五十音选择
-		brick_instance.set("preset_kana_selection", i)
+		if brick_instance.has_method("set_kana_selection"):
+			brick_instance.call("set_kana_selection", i)
+		elif brick_instance.has_property("preset_kana_selection"):
+			brick_instance.set("preset_kana_selection", i)
+		else:
+			push_error("场景实例没有预设五十音选择属性或方法")
+			brick_instance.queue_free()
+			continue
+		
+		# 设置场景名称
 		brick_instance.set_name("Brick_" + kana_symbol)
 		
 		# 打包场景
@@ -90,6 +99,9 @@ func _run():
 			
 			if error == OK:
 				print("✓ 创建场景: " + scene_path)
+				
+				# 尝试设置继承关系
+				_set_scene_inheritance(scene_path, base_brick_path)
 			else:
 				push_error("保存场景失败: " + scene_path + " (错误代码: " + str(error) + ")")
 		else:
@@ -103,3 +115,82 @@ func _run():
 	# 刷新资源管理器
 	get_editor_interface().get_resource_filesystem().scan()
 	print("资源管理器已刷新")
+
+# 设置场景继承关系
+func _set_scene_inheritance(scene_path: String, base_scene_path: String) -> bool:
+	# 在 Godot 中设置场景继承关系需要修改场景文件的内容
+	# 由于 Godot 的 API 限制，我们需要直接修改场景文件
+	
+	# 读取场景文件内容
+	var file = FileAccess.open(scene_path, FileAccess.READ)
+	if not file:
+		push_error("无法打开场景文件: " + scene_path)
+		return false
+	
+	var content = file.get_as_text()
+	file.close()
+	
+	# 查找并替换继承关系
+	var lines = content.split("\n")
+	var new_content = ""
+	var found_inheritance = false
+	
+	for line in lines:
+		if line.begins_with("[ext_resource"):
+			# 检查是否已经有继承关系
+			if "type=\"PackedScene\"" in line and "uid=" in line:
+				# 这可能是基础场景的引用，我们需要添加继承关系
+				var uid = line.get_slice("uid=\"", 1).get_slice("\"", 0)
+				if uid.is_valid_int():
+					# 添加继承属性
+					line += " instance=ExtResource(" + uid + ")"
+					found_inheritance = true
+		new_content += line + "\n"
+	
+	# 如果没有找到继承关系，尝试添加
+	if not found_inheritance:
+		# 我们需要找到基础场景的 UID
+		var base_uid = _get_resource_uid(base_scene_path)
+		if base_uid != "":
+			# 在文件开头添加继承关系
+			var new_lines = new_content.split("\n")
+			new_content = ""
+			
+			for i in range(new_lines.size()):
+				if i == 1:  # 在 [ext_resource] 部分之后添加
+					new_content += "[ext_resource type=\"PackedScene\" path=\"" + base_scene_path + "\" id=" + base_uid + "]\n"
+				new_content += new_lines[i] + "\n"
+	
+	# 写入修改后的内容
+	file = FileAccess.open(scene_path, FileAccess.WRITE)
+	if not file:
+		push_error("无法写入场景文件: " + scene_path)
+		return false
+	
+	file.store_string(new_content)
+	file.close()
+	
+	print("✓ 设置场景继承关系: " + scene_path + " -> " + base_scene_path)
+	return true
+
+# 修复后的 _get_resource_uid 函数
+func _get_resource_uid(resource_path: String) -> String:
+	# 这个方法尝试获取资源的 UID
+	# 在 Godot 4.x 中，ResourceLoader.get_resource_uid() 返回 int 类型
+	if ResourceLoader.has_cached(resource_path):
+		var uid = ResourceLoader.get_resource_uid(resource_path)
+		if uid != -1:
+			return str(uid)  # 将 int 转换为 String
+		else:
+			return ""
+	
+	# 如果资源没有加载，尝试加载它
+	var resource = load(resource_path)
+	if resource:
+		var uid = ResourceLoader.get_resource_uid(resource_path)
+		if uid != -1:
+			return str(uid)  # 将 int 转换为 String
+		else:
+			return ""
+	
+	return ""

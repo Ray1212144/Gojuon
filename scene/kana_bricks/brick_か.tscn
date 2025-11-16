@@ -1,4 +1,8 @@
+[ext_resource type="PackedScene" path="res://scene/brick.tscn" id=5643290256286527107]
+[ext_resource type="Script" uid="uid://d0hqagi02i4mr" path="res://script/bric.gd" id="1_pvtgr"]
+[ext_resource type="Texture2D" uid="uid://d1m2asmkrx0qg" path="res://asset/鐮栧潡.png" id="2_lslt3"]
 [gd_scene load_steps=4 format=3 uid="uid://d1xls5kxb8iqh"]
+[ext_resource type="PackedScene" path="res://scene/brick.tscn" id=5643290256286527107]
 
 [ext_resource type="Script" uid="uid://d0hqagi02i4mr" path="res://script/bric.gd" id="1_pvtgr"]
 [ext_resource type="Texture2D" uid="uid://d1m2asmkrx0qg" path="res://asset/鐮栧潡.png" id="2_lslt3"]
@@ -6,9 +10,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bo08i"]
 size = Vector2(32, 50)
 
-[node name="Brick_か" type="StaticBody2D"]
+[node name="Brick_か" type="StaticBody2D"] instance=ExtResource(5643290256286527107)
 script = ExtResource("1_pvtgr")
-preset_kana_selection = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_lslt3")
@@ -24,3 +27,6 @@ offset_bottom = 2.0
 text = "か"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+
+
