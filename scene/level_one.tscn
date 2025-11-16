@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://o55eh0r742kd"]
+
+[ext_resource type="Script" uid="uid://bmiy26g2nt7e" path="res://script/player.gd" id="1_swhd1"]
+[ext_resource type="Texture2D" uid="uid://b50sekkr7evd" path="res://asset/icon.svg" id="2_kd301"]
+[ext_resource type="PackedScene" uid="uid://di15rqv8s6tl1" path="res://scene/fill.tscn" id="4_sytsc"]
+[ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://scene/bricks.tres" id="5_kd301"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_foyw7"]
+size = Vector2(63, 63)
+
+[node name="LevelOne" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_swhd1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_foyw7")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kd301")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(68, -14)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 0, 0, 0, 0, 6, 0)
+tile_set = ExtResource("5_kd301")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Fill" parent="Node2D" instance=ExtResource("4_sytsc")]
+position = Vector2(76, -4)
+
+[node name="Fill2" parent="Node2D" instance=ExtResource("4_sytsc")]
+position = Vector2(75, -104)
+
+[node name="Fill3" parent="Node2D" instance=ExtResource("4_sytsc")]
+position = Vector2(76, -152)
+
+[node name="Fill4" parent="Node2D" instance=ExtResource("4_sytsc")]
+position = Vector2(77, -201)
+
+[node name="Fill5" parent="Node2D" instance=ExtResource("4_sytsc")]
+position = Vector2(107, -56)

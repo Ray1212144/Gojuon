@@ -1,0 +1,99 @@
+[gd_resource type="TileSet" load_steps=48 format=3 uid="uid://cj1vvag8n1wbe"]
+
+[ext_resource type="PackedScene" uid="uid://bg44xoji3y135" path="res://scene/kana_bricks/brick_あ.tscn" id="1_ipt73"]
+[ext_resource type="PackedScene" uid="uid://dmln386ra2c7r" path="res://scene/kana_bricks/brick_こ.tscn" id="2_nh0ht"]
+[ext_resource type="PackedScene" uid="uid://cvfsxyqkolwas" path="res://scene/kana_bricks/brick_い.tscn" id="2_ri7wy"]
+[ext_resource type="PackedScene" uid="uid://dq4nvoquvpyj6" path="res://scene/kana_bricks/brick_さ.tscn" id="3_d1lch"]
+[ext_resource type="PackedScene" uid="uid://b0hibw8o5wlf6" path="res://scene/kana_bricks/brick_う.tscn" id="3_rraff"]
+[ext_resource type="PackedScene" uid="uid://b52ysn0vac0oy" path="res://scene/kana_bricks/brick_え.tscn" id="4_4gdkv"]
+[ext_resource type="PackedScene" uid="uid://bro7obge8dkw0" path="res://scene/kana_bricks/brick_し.tscn" id="4_mxkbb"]
+[ext_resource type="PackedScene" uid="uid://desc1lhub7vop" path="res://scene/kana_bricks/brick_す.tscn" id="5_84lkt"]
+[ext_resource type="PackedScene" uid="uid://cdpfdyreu8f1c" path="res://scene/kana_bricks/brick_せ.tscn" id="6_p653f"]
+[ext_resource type="PackedScene" uid="uid://daqalfu0qowyq" path="res://scene/kana_bricks/brick_そ.tscn" id="7_3ngb6"]
+[ext_resource type="PackedScene" uid="uid://cljberyxjwhxb" path="res://scene/kana_bricks/brick_た.tscn" id="8_ffecr"]
+[ext_resource type="PackedScene" uid="uid://pa3dlvcey038" path="res://scene/kana_bricks/brick_ち.tscn" id="9_bvk7k"]
+[ext_resource type="PackedScene" uid="uid://buexlk58w51t" path="res://scene/kana_bricks/brick_つ.tscn" id="10_pxjpg"]
+[ext_resource type="PackedScene" uid="uid://cl72y3s2jvyu7" path="res://scene/kana_bricks/brick_て.tscn" id="11_n8qo7"]
+[ext_resource type="PackedScene" uid="uid://dh15o52yktruu" path="res://scene/kana_bricks/brick_と.tscn" id="13_h4bwj"]
+[ext_resource type="PackedScene" uid="uid://dmucs5niw6tg3" path="res://scene/kana_bricks/brick_な.tscn" id="14_bbp6i"]
+[ext_resource type="PackedScene" uid="uid://2axcdcd3p5bb" path="res://scene/kana_bricks/brick_に.tscn" id="15_8bix4"]
+[ext_resource type="PackedScene" uid="uid://6mri6p5dnmvn" path="res://scene/kana_bricks/brick_ぬ.tscn" id="16_u8ap1"]
+[ext_resource type="PackedScene" uid="uid://cc5wnj052foql" path="res://scene/kana_bricks/brick_ね.tscn" id="17_xok4c"]
+[ext_resource type="PackedScene" uid="uid://cfqv3gi630j0q" path="res://scene/kana_bricks/brick_の.tscn" id="18_plicq"]
+[ext_resource type="PackedScene" uid="uid://drdb2xa7gruc" path="res://scene/kana_bricks/brick_は.tscn" id="19_cipqi"]
+[ext_resource type="PackedScene" uid="uid://1a8utcu6s8e7" path="res://scene/kana_bricks/brick_ひ.tscn" id="20_ygmxf"]
+[ext_resource type="PackedScene" uid="uid://dhoulufb4olk4" path="res://scene/kana_bricks/brick_ふ.tscn" id="21_ofu76"]
+[ext_resource type="PackedScene" uid="uid://bpaipx66l0f23" path="res://scene/kana_bricks/brick_へ.tscn" id="22_w1ei1"]
+[ext_resource type="PackedScene" uid="uid://digxsvrvktlfp" path="res://scene/kana_bricks/brick_ほ.tscn" id="24_kj544"]
+[ext_resource type="PackedScene" uid="uid://kmgsu1v0qlga" path="res://scene/kana_bricks/brick_ま.tscn" id="25_cda1r"]
+[ext_resource type="PackedScene" uid="uid://g81otmn75kts" path="res://scene/kana_bricks/brick_み.tscn" id="26_gj67b"]
+[ext_resource type="PackedScene" uid="uid://cahtglubl75s0" path="res://scene/kana_bricks/brick_む.tscn" id="27_nlfb1"]
+[ext_resource type="PackedScene" uid="uid://pt1o82lqldb5" path="res://scene/kana_bricks/brick_め.tscn" id="28_acedy"]
+[ext_resource type="PackedScene" uid="uid://cvljkdgbkgt2x" path="res://scene/kana_bricks/brick_も.tscn" id="29_12we1"]
+[ext_resource type="PackedScene" uid="uid://d1u24r3gs7xn6" path="res://scene/kana_bricks/brick_や.tscn" id="30_hxkgk"]
+[ext_resource type="PackedScene" uid="uid://cymdryryaipa7" path="res://scene/kana_bricks/brick_ゆ.tscn" id="31_joo51"]
+[ext_resource type="PackedScene" uid="uid://chnoaht2txme4" path="res://scene/kana_bricks/brick_よ.tscn" id="32_ddt21"]
+[ext_resource type="PackedScene" uid="uid://cib7le8xt4147" path="res://scene/kana_bricks/brick_ら.tscn" id="33_kdvi7"]
+[ext_resource type="PackedScene" uid="uid://c6y3m6twlj2o" path="res://scene/kana_bricks/brick_り.tscn" id="35_s7rjj"]
+[ext_resource type="PackedScene" uid="uid://yct2un6wdnsa" path="res://scene/kana_bricks/brick_る.tscn" id="36_88q2m"]
+[ext_resource type="PackedScene" uid="uid://b47a5aggwu6n5" path="res://scene/kana_bricks/brick_れ.tscn" id="37_x7i5e"]
+[ext_resource type="PackedScene" uid="uid://2oabtftgc0gp" path="res://scene/kana_bricks/brick_ろ.tscn" id="38_eiqvs"]
+[ext_resource type="PackedScene" uid="uid://byfhq2udaof7w" path="res://scene/kana_bricks/brick_わ.tscn" id="39_xrpue"]
+[ext_resource type="PackedScene" uid="uid://vfpd2vfc4p6b" path="res://scene/kana_bricks/brick_を.tscn" id="40_xnrpm"]
+[ext_resource type="PackedScene" uid="uid://b6ghmmd4wcm8b" path="res://scene/kana_bricks/brick_ん.tscn" id="41_yxtpf"]
+[ext_resource type="PackedScene" uid="uid://cilbvkc5qyekp" path="res://scene/kana_bricks/brick_お.tscn" id="42_btawr"]
+[ext_resource type="PackedScene" uid="uid://d1xls5kxb8iqh" path="res://scene/kana_bricks/brick_か.tscn" id="43_oko71"]
+[ext_resource type="PackedScene" uid="uid://bpsxjun3j3qkk" path="res://scene/kana_bricks/brick_き.tscn" id="44_8d5o6"]
+[ext_resource type="PackedScene" uid="uid://0y4ai0wpv2oa" path="res://scene/kana_bricks/brick_く.tscn" id="45_ewcub"]
+[ext_resource type="PackedScene" uid="uid://b60o1im62aqsw" path="res://scene/kana_bricks/brick_け.tscn" id="46_4fsbc"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cakva"]
+scenes/1/scene = ExtResource("1_ipt73")
+scenes/2/scene = ExtResource("2_ri7wy")
+scenes/3/scene = ExtResource("3_rraff")
+scenes/4/scene = ExtResource("4_4gdkv")
+scenes/5/scene = ExtResource("42_btawr")
+scenes/6/scene = ExtResource("43_oko71")
+scenes/7/scene = ExtResource("44_8d5o6")
+scenes/8/scene = ExtResource("45_ewcub")
+scenes/9/scene = ExtResource("46_4fsbc")
+scenes/10/scene = ExtResource("2_nh0ht")
+scenes/11/scene = ExtResource("3_d1lch")
+scenes/12/scene = ExtResource("4_mxkbb")
+scenes/13/scene = ExtResource("5_84lkt")
+scenes/14/scene = ExtResource("6_p653f")
+scenes/15/scene = ExtResource("7_3ngb6")
+scenes/16/scene = ExtResource("8_ffecr")
+scenes/17/scene = ExtResource("9_bvk7k")
+scenes/18/scene = ExtResource("10_pxjpg")
+scenes/19/scene = ExtResource("11_n8qo7")
+scenes/20/scene = ExtResource("13_h4bwj")
+scenes/21/scene = ExtResource("14_bbp6i")
+scenes/22/scene = ExtResource("15_8bix4")
+scenes/23/scene = ExtResource("16_u8ap1")
+scenes/24/scene = ExtResource("17_xok4c")
+scenes/25/scene = ExtResource("18_plicq")
+scenes/26/scene = ExtResource("19_cipqi")
+scenes/27/scene = ExtResource("20_ygmxf")
+scenes/28/scene = ExtResource("21_ofu76")
+scenes/29/scene = ExtResource("22_w1ei1")
+scenes/30/scene = ExtResource("24_kj544")
+scenes/31/scene = ExtResource("25_cda1r")
+scenes/32/scene = ExtResource("26_gj67b")
+scenes/33/scene = ExtResource("27_nlfb1")
+scenes/34/scene = ExtResource("28_acedy")
+scenes/35/scene = ExtResource("29_12we1")
+scenes/36/scene = ExtResource("30_hxkgk")
+scenes/37/scene = ExtResource("31_joo51")
+scenes/38/scene = ExtResource("32_ddt21")
+scenes/39/scene = ExtResource("33_kdvi7")
+scenes/40/scene = ExtResource("35_s7rjj")
+scenes/41/scene = ExtResource("36_88q2m")
+scenes/42/scene = ExtResource("37_x7i5e")
+scenes/43/scene = ExtResource("38_eiqvs")
+scenes/44/scene = ExtResource("39_xrpue")
+scenes/45/scene = ExtResource("40_xnrpm")
+scenes/46/scene = ExtResource("41_yxtpf")
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_cakva")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://desc1lhub7vop"]
+
+[ext_resource type="Script" uid="uid://d0hqagi02i4mr" path="res://script/bric.gd" id="1_vp1ou"]
+[ext_resource type="Texture2D" uid="uid://d1m2asmkrx0qg" path="res://asset/鐮栧潡.png" id="2_lnbpr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo08i"]
+size = Vector2(32, 50)
+
+[node name="Brick_す" type="StaticBody2D"]
+script = ExtResource("1_vp1ou")
+preset_kana_selection = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lnbpr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bo08i")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -21.0
+offset_right = 20.0
+offset_bottom = 2.0
+text = "す"
+horizontal_alignment = 1
+vertical_alignment = 1
