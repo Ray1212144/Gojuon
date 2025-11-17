@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://di15rqv8s6tl1"]
 
 [ext_resource type="Script" uid="uid://babf4cr0e68a8" path="res://script/fill.gd" id="1_iel58"]
-[ext_resource type="Texture2D" uid="uid://d1m2asmkrx0qg" path="res://asset/鐮栧潡.png" id="2_0na5l"]
+[ext_resource type="Texture2D" uid="uid://d1m2asmkrx0qg" path="res://asset/Sprite/鐮栧潡.png" id="2_0na5l"]
 [ext_resource type="Script" uid="uid://crom8tyb61qbr" path="res://script/set_kana_button.gd" id="3_utdu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bo08i"]
