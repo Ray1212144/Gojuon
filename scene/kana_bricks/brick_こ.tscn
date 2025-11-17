@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" path="res://scene/brick.tscn" id=5643290256286527107]
 [ext_resource type="Script" uid="uid://d0hqagi02i4mr" path="res://script/bric.gd" id="1_rb6ct"]
 [ext_resource type="Texture2D" uid="uid://d1m2asmkrx0qg" path="res://asset/鐮栧潡.png" id="2_6kui7"]
@@ -28,5 +29,8 @@ text = "こ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+=======
+[gd_scene load_steps=2 format=3 uid="uid://bqbkb588qb3ck"]
+>>>>>>> Stashed changes
 
 

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw8qbdv6swl46"]
+
+[ext_resource type="PackedScene" uid="uid://cmnwfv6qsl0sd" path="res://scene/brick.tscn" id="1"]
+
+[node name="Brick_し" instance=ExtResource("1")]
