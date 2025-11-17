@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dl13gwq18wsw7"]
 
-[ext_resource type="Script" uid="uid://cpyfm6tsn51x3" path="res://scene/explode_area.gd" id="1_7wo4p"]
+[ext_resource type="Script" uid="uid://cpyfm6tsn51x3" path="res://script/explode_area.gd" id="1_7wo4p"]
 
 [node name="ExplodeArea" type="Area2D" groups=["ExplodeArea2D", "explode_area"]]
 script = ExtResource("1_7wo4p")
