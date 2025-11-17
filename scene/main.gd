@@ -5,14 +5,14 @@ class_name Main
 
 
 func _ready() -> void:
-	canvas_animation_player.play("blackout")
+	#return
 	Dialogic.signal_event.connect(_on_dialogic_text_signal)
-	#Dialogic.start("intro_1")
+	Dialogic.start("intro_1")
 	
 
 func _on_dialogic_text_signal(argument:String):
 	if argument == "blackout":
-		canvas_animation_player.play("blackout")
+		canvas_animation_player.play("black_out")
 		
 		
 #func start_dialog():
