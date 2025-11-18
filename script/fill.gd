@@ -4,6 +4,7 @@ class_name Fill
 
 @export var label : Label
 @export var button_container : Node2D  # 修改为Node2D，因为按钮现在是Area2D节点
+@export var show_button : Button
 
 # 使用与 Brick 类相同的五十音数据
 const KANA_SYMBOLS = [
@@ -36,6 +37,9 @@ func _setup_buttons():
 				child.pressed.connect(_on_kana_button_pressed.bind(child))
 
 func set_kana(selection: int):
+	var fills = get_tree().get_nodes_in_group("Fill")
+	for i in fills:
+		i.show_button.show()
 	kana_selection = selection
 	# 更新 Fill 的显示
 	update_display()
@@ -65,9 +69,24 @@ func _on_button_pressed() -> void:
 		var buttons = get_tree().get_nodes_in_group("button_ui")
 		for i in buttons:
 			i.hide()
+		var fills = get_tree().get_nodes_in_group("Fill")
+		for i in fills:
+			if i != self:
+				i.show_button.hide()
 		button_container.show()
 	else:
 		button_container.hide()
+		var fills = get_tree().get_nodes_in_group("Fill")
+		for i in fills:
+			i.show_button.show()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Cancel"):
+		button_container.hide()
+		var fills = get_tree().get_nodes_in_group("Fill")
+		for i in fills:
+			i.show_button.show()
+
 
 # 通知所有重叠的 CheckArea2D
 func notify_overlapping_check_areas():

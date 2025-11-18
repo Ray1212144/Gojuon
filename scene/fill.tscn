@@ -10,10 +10,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bo08i"]
 size = Vector2(32, 50)
 
-[node name="Fill" type="StaticBody2D" node_paths=PackedStringArray("label", "button_container") groups=["Fill"]]
+[node name="Fill" type="StaticBody2D" node_paths=PackedStringArray("label", "button_container", "show_button") groups=["Fill"]]
 script = ExtResource("1_iel58")
 label = NodePath("Label")
 button_container = NodePath("ButtonUi")
+show_button = NodePath("Button")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_0na5l")
@@ -98,13 +99,6 @@ kana_selection = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonUi/Area2D"]
 position = Vector2(47, -12)
 shape = ExtResource("6_vcbec")
-
-[node name="Container" type="TextureRect" parent="ButtonUi"]
-visible = false
-offset_left = -242.0
-offset_top = -240.0
-offset_right = 238.0
-offset_bottom = 237.0
 
 [node name="Timer" type="Timer" parent="ButtonUi"]
 

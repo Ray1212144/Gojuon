@@ -46,6 +46,8 @@ var kana_selection: int = 0
 
 @onready var label = $Label
 
+
+
 func _ready():
 	# 确保有标签节点
 	if not has_node("Label"):
