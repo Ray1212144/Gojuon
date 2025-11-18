@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://babf4cr0e68a8" path="res://script/fill.gd" id="1_iel58"]
 [ext_resource type="Texture2D" uid="uid://d1m2asmkrx0qg" path="res://asset/Sprite/鐮栧潡.png" id="2_0na5l"]
 [ext_resource type="SpriteFrames" uid="uid://ce16dna6wlyi2" path="res://scene/button_ui.tres" id="3_5fyq7"]
-[ext_resource type="Script" uid="uid://bqfte5d1te2kc" path="res://scene/set_kana_area.gd" id="4_0gapt"]
-[ext_resource type="Script" uid="uid://k4tw3fdlfbsl" path="res://scene/button_ui.gd" id="4_vcbec"]
+[ext_resource type="Script" uid="uid://bqfte5d1te2kc" path="res://script/set_kana_area.gd" id="4_0gapt"]
+[ext_resource type="Script" uid="uid://k4tw3fdlfbsl" path="res://script/button_ui.gd" id="4_vcbec"]
 [ext_resource type="Shape2D" uid="uid://bse0um8py6s4b" path="res://fill_ui_button.tres" id="6_vcbec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bo08i"]
@@ -42,6 +42,7 @@ grow_vertical = 2
 scale = Vector2(3.8678958, 6.3802385)
 
 [node name="ButtonUi" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("buttons") groups=["button_ui"]]
+visible = false
 z_index = 1
 position = Vector2(1, -3)
 scale = Vector2(0.25, 0.25)

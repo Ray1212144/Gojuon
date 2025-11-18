@@ -88,6 +88,8 @@ Fill=""
 ExplodeArea2D=""
 CheckArea2D=""
 button_ui=""
+player=""
+bonfire=""
 
 [input]
 

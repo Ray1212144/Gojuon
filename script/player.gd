@@ -4,6 +4,7 @@ class_name Player
 # 移动速度（像素/秒）
 @export var speed: float = 600
 @export var animation_player: AnimationPlayer
+@export var bonfire : Bonfire
 
 
 # 动画名称常量
@@ -96,4 +97,6 @@ func get_idle_animation_name() -> String:
 
 
 func _on_reset_pressed() -> void:
-	get_tree().reload_current_scene()
+	self.global_position = bonfire.check_point.global_position
+	bonfire.main = get_parent()
+	bonfire.call_reset()

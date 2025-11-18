@@ -103,23 +103,22 @@ func _set_kana_selection_from_filename():
 			var index = KANA_SYMBOLS.find(kana_symbol)
 			if index != -1:
 				kana_selection = index
-				if Engine.is_editor_hint():
-					print("根据文件名设置假名: " + kana_symbol + " (索引: " + str(index) + ")")
+
+
 			else:
 				# 如果文件名中的假名无效，使用预设值
 				kana_selection = preset_kana_selection
-				if Engine.is_editor_hint():
-					push_error("无法从文件名识别假名: " + kana_symbol + "，使用预设值: " + str(preset_kana_selection))
+
+
 		else:
 			# 文件名格式不符合，使用预设值
 			kana_selection = preset_kana_selection
-			if Engine.is_editor_hint():
-				print("文件名格式不符合预期: " + file_name + "，使用预设值: " + str(preset_kana_selection))
+
+
 	else:
 		# 无法获取文件路径，使用预设值
 		kana_selection = preset_kana_selection
-		if Engine.is_editor_hint():
-			print("无法获取场景文件路径，使用预设值: " + str(preset_kana_selection))
+
 
 # 获取当前显示的符号
 func get_symbol() -> String:

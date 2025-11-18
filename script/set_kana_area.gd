@@ -47,22 +47,20 @@ func _ready():
 
 	# 连接信号
 	if not Engine.is_editor_hint():
-		print("KanaAreaButton: 连接输入信号")
+
 		connect("input_event", _on_input_event)
 		connect("mouse_entered", _on_mouse_entered)
 		connect("mouse_exited", _on_mouse_exited)
-	else:
-		print("KanaAreaButton: 编辑器模式，不连接输入信号")
-	
+
 	# 初始化显示
 	update_display()
-	print("KanaAreaButton: 初始化完成，kana_selection = ", _kana_selection)
+
 
 # 属性设置器
 func set_kana_selection(value: int):
 	_kana_selection = clamp(value, 0, KANA_SYMBOLS.size() - 1)
 	update_display()
-	print("KanaAreaButton: 设置kana_selection为 ", value)
+
 
 func get_kana_selection() -> int:
 	return _kana_selection
@@ -71,7 +69,7 @@ func get_kana_selection() -> int:
 func update_display():
 	# 触发重绘
 	queue_redraw()
-	print("KanaAreaButton: 更新显示为 '", get_symbol(), "'")
+
 
 
 

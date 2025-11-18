@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://buxnl7k1t1loc"]
+
+[ext_resource type="Texture2D" uid="uid://b50sekkr7evd" path="res://asset/Sprite/icon.svg" id="1_g21no"]
+[ext_resource type="Script" uid="uid://bd7b0otxxibtf" path="res://scene/bonfire.gd" id="2_dqqxp"]
+
+[node name="Bonfire" type="Sprite2D" node_paths=PackedStringArray("check_point") groups=["bonfire"]]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_g21no")
+script = ExtResource("2_dqqxp")
+check_point = NodePath("SpawnPoint")
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(120, 4)
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "点亮"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
