@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba3d6tlu7xloy"]
+
+[ext_resource type="Texture2D" uid="uid://b50sekkr7evd" path="res://asset/Sprite/icon.svg" id="1_qv5ro"]
+[ext_resource type="Script" uid="uid://hhfy8ee4xi12" path="res://scene/fire_key.gd" id="2_640d8"]
+
+[node name="FireKey" type="TextureRect"]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1792.0
+offset_bottom = -952.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_qv5ro")
+expand_mode = 1
+script = ExtResource("2_640d8")
+
+[node name="TextureRect" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="TextureRect" to="." method="_on_texture_rect_pressed"]

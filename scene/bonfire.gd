@@ -9,10 +9,14 @@ var main : Main
 
 # 标识此篝火是否为当前激活的复活点
 var is_active: bool = false
+var has_pass : bool = false
 
 func call_reset():
+	if has_pass:
+		main.travel_fire()
+		return
 	main.reset(main.get_path_to(place.get_parent()),file_path)
-	place.queue_free()
+
 
 func _process(delta: float) -> void:
 	if is_active:

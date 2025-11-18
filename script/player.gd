@@ -94,9 +94,3 @@ func get_idle_animation_name() -> String:
 			return ANIM_IDLE_DOWN
 		else:
 			return ANIM_IDLE_UP
-
-
-func _on_reset_pressed() -> void:
-	self.global_position = bonfire.check_point.global_position
-	bonfire.main = get_parent()
-	bonfire.call_reset()
