@@ -18,6 +18,8 @@ func _ready() -> void:
 	
 
 
+
+
 func call_reset():
 	if has_pass:
 		main.travel_fire()
@@ -44,11 +46,11 @@ func _on_button_pressed() -> void:
 	is_active = true
 
 
-func _on_area_2d_body_entered(body: Player) -> void:
+func _on_area_2d_body_entered(body) -> void:
 	if body is Player:
 		player_entered = true
 
 
-func _on_area_2d_body_exited(body: Player) -> void:
+func _on_area_2d_body_exited(body) -> void:
 	if body is Player:
 		player_entered = false
