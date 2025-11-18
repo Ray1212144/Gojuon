@@ -6,6 +6,7 @@
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_hjaqi")
+speed = 300.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
