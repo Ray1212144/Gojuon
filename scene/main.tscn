@@ -1,14 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://o55eh0r742kd"]
+[gd_scene load_steps=9 format=4 uid="uid://o55eh0r742kd"]
 
-[ext_resource type="Script" uid="uid://bmiy26g2nt7e" path="res://script/player.gd" id="1_0ha60"]
 [ext_resource type="Script" uid="uid://bx04uuyksavrn" path="res://scene/main.gd" id="1_4j5ol"]
-[ext_resource type="Texture2D" uid="uid://b50sekkr7evd" path="res://asset/Sprite/icon.svg" id="2_4j5ol"]
+[ext_resource type="PackedScene" uid="uid://bt5rus4vk3pfx" path="res://scene/character/あ.tscn" id="2_0ha60"]
 [ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://scene/bricks.tres" id="3_p1hux"]
 [ext_resource type="PackedScene" uid="uid://dl13gwq18wsw7" path="res://scene/explode_area.tscn" id="4_of57s"]
 [ext_resource type="PackedScene" uid="uid://dv77holfwabvd" path="res://scene/check_area.tscn" id="5_b5f6u"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_foyw7"]
-size = Vector2(63, 63)
 
 [sub_resource type="Animation" id="Animation_p1hux"]
 length = 0.001
@@ -50,19 +46,7 @@ _data = {
 script = ExtResource("1_4j5ol")
 canvas_animation_player = NodePath("CanvasLayer/CanvasAnimationPlayer")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_0ha60")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_foyw7")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_4j5ol")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(2, 2)
+[node name="あ" parent="." instance=ExtResource("2_0ha60")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(68, -14)
@@ -171,11 +155,6 @@ target_kana_selection = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Reset" type="Button" parent="CanvasLayer"]
-offset_right = 316.0
-offset_bottom = 156.0
-text = "reset"
-
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -189,5 +168,3 @@ root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_p1hux")
 }
-
-[connection signal="pressed" from="CanvasLayer/Reset" to="CharacterBody2D" method="_on_reset_pressed"]

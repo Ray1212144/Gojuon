@@ -12,6 +12,7 @@ var style_paths = [
 ]
 
 func _ready() -> void:
+	return
 	load_style()
 	Dialogic.signal_event.connect(_on_dialogic_text_signal)
 	Dialogic.start("intro_1")
