@@ -40,6 +40,7 @@ signal pressed
 signal button_hovered(node)
 signal button_exited
 
+
 func _ready():
 	# 确保可点击
 	input_pickable = true

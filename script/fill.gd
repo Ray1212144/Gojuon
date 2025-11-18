@@ -62,6 +62,9 @@ func _on_kana_button_pressed(button: Area2D):
 
 func _on_button_pressed() -> void:
 	if not button_container.visible:
+		var buttons = get_tree().get_nodes_in_group("button_ui")
+		for i in buttons:
+			i.hide()
 		button_container.show()
 	else:
 		button_container.hide()
