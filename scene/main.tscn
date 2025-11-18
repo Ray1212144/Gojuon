@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://o55eh0r742kd"]
+[gd_scene load_steps=11 format=3 uid="uid://o55eh0r742kd"]
 
 [ext_resource type="Script" uid="uid://bx04uuyksavrn" path="res://script/main.gd" id="1_4j5ol"]
 [ext_resource type="PackedScene" uid="uid://bt5rus4vk3pfx" path="res://scene/character/あ.tscn" id="2_0ha60"]
+[ext_resource type="PackedScene" uid="uid://tgmexrqfxrms" path="res://scene/place_postion.tscn" id="3_0ha60"]
 [ext_resource type="PackedScene" uid="uid://kj3s2uo6dk28" path="res://scene/place/place_2.tscn" id="4_0ha60"]
 [ext_resource type="PackedScene" uid="uid://blpr2gos1kxo6" path="res://scene/place/place_1.tscn" id="4_brvut"]
 
@@ -85,6 +86,7 @@ canvas_animation_player = NodePath("CanvasLayer/CanvasAnimationPlayer")
 player = NodePath("あ")
 
 [node name="あ" parent="." instance=ExtResource("2_0ha60")]
+speed = 600.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -103,11 +105,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_p1hux")
 }
 
-[node name="PlacePostion1" type="Node2D" parent="."]
+[node name="PlacePostion" parent="." instance=ExtResource("3_0ha60")]
 
-[node name="Place1" parent="PlacePostion1" instance=ExtResource("4_brvut")]
+[node name="Place1" parent="PlacePostion" instance=ExtResource("4_brvut")]
 
-[node name="PlacePostion2" type="Node2D" parent="."]
-position = Vector2(411, -52)
+[node name="PlacePostion2" parent="." instance=ExtResource("3_0ha60")]
 
 [node name="Place2" parent="PlacePostion2" instance=ExtResource("4_0ha60")]
+position = Vector2(411, -52)

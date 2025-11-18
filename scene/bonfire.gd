@@ -7,10 +7,16 @@ var main : Main
 @export var place : Node2D
 @export var file_path:String
 var player_entered : bool
-
+var place_position : PlacePostion
 # 标识此篝火是否为当前激活的复活点
 var is_active: bool = false
 var has_pass : bool = false
+
+func _ready() -> void:
+	place_position = place.get_parent()
+	has_pass = place_position.has_pass
+	
+
 
 func call_reset():
 	if has_pass:
@@ -26,6 +32,7 @@ func _process(delta: float) -> void:
 	else:
 		self_modulate = Color.WHITE
 
+
 func _on_button_pressed() -> void:
 	if not player_entered:
 		return
@@ -37,11 +44,11 @@ func _on_button_pressed() -> void:
 	is_active = true
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: Player) -> void:
 	if body is Player:
 		player_entered = true
 
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(body: Player) -> void:
 	if body is Player:
 		player_entered = false

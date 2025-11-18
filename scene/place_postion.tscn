@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://tgmexrqfxrms"]
+
+[ext_resource type="Script" uid="uid://bnoyhillxnmk8" path="res://scene/place_postion.gd" id="1_0n7rs"]
+
+[node name="PlacePostion" type="Node2D"]
+script = ExtResource("1_0n7rs")
