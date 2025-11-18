@@ -1,8 +1,9 @@
+@tool
 extends StaticBody2D
 class_name Fill
 
 @export var label : Label
-@export var button_container : Container
+@export var button_container : Node2D  # 修改为Node2D，因为按钮现在是Area2D节点
 
 # 使用与 Brick 类相同的五十音数据
 const KANA_SYMBOLS = [
@@ -29,7 +30,7 @@ func _ready() -> void:
 func _setup_buttons():
 	# 遍历所有按钮并连接信号
 	for child in button_container.get_children():
-		if child is Button:
+		if child is Area2D and child.has_method("get_kana_selection"):
 			# 如果按钮还没有连接信号，则连接
 			if not child.pressed.is_connected(_on_kana_button_pressed):
 				child.pressed.connect(_on_kana_button_pressed.bind(child))
@@ -49,7 +50,7 @@ func update_display():
 		# 如果没有选择，显示问号或其他默认值
 		label.text = ""
 
-func _on_kana_button_pressed(button: Button):
+func _on_kana_button_pressed(button: Area2D):
 	# 获取按钮的 kana 值并设置给 Fill
 	if button.has_method("get_kana_selection"):
 		var button_kana = button.get_kana_selection()
@@ -60,8 +61,10 @@ func _on_kana_button_pressed(button: Button):
 	button_container.hide()
 
 func _on_button_pressed() -> void:
-	# 处理点击逻辑
-	button_container.show()
+	if not button_container.visible:
+		button_container.show()
+	else:
+		button_container.hide()
 
 # 通知所有重叠的 CheckArea2D
 func notify_overlapping_check_areas():

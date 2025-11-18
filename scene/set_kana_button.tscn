@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqdk1627hts2b"]
+
+[ext_resource type="Script" uid="uid://crom8tyb61qbr" path="res://script/set_kana_button.gd" id="1_jke88"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(100, 50)
+anchors_preset = -1
+anchor_top = -0.2296748
+offset_left = -227.0
+offset_top = -44.0
+offset_right = -127.0
+offset_bottom = 119.0
+text = "あ"
+script = ExtResource("1_jke88")
+size = Vector2(100, 411.04877)
+kana_selection = 0
+metadata/_edit_group_ = true
