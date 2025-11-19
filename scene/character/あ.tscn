@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bt5rus4vk3pfx"]
+[gd_scene load_steps=15 format=3 uid="uid://bt5rus4vk3pfx"]
 
 [ext_resource type="PackedScene" uid="uid://dxhfeuecjtu80" path="res://scene/character/player.tscn" id="1_uovpx"]
 [ext_resource type="Texture2D" uid="uid://bifkvmybarb2e" path="res://asset/Sprite/行走图.png" id="2_j43e3"]
+[ext_resource type="Script" uid="uid://d4i3nspnhw8kn" path="res://scene/character/camera_2d.gd" id="2_o64s4"]
 
 [sub_resource type="Animation" id="Animation_d5bk8"]
 length = 0.001
@@ -169,6 +170,9 @@ height = 32.0
 
 [node name="あ" node_paths=PackedStringArray("animation_player") instance=ExtResource("1_uovpx")]
 animation_player = NodePath("AnimationPlayer")
+
+[node name="Camera2D" parent="." index="0"]
+script = ExtResource("2_o64s4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 libraries = {

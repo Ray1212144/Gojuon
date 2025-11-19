@@ -10,7 +10,7 @@ speed = 300.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
-limit_enabled = false
+process_callback = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

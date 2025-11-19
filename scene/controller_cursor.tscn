@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ks7r6fown2mg"]
+
+[ext_resource type="Script" uid="uid://cqxd8jugxqoiy" path="res://scene/controller_cursor.gd" id="1_yejgn"]
+
+[node name="ControllerCursor" type="CanvasLayer"]
+script = ExtResource("1_yejgn")
