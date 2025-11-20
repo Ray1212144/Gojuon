@@ -18,7 +18,6 @@ func _ready() -> void:
 	var controller_cursor = cursor_scene.instantiate()
 	add_child(controller_cursor)
 
-	return
 	load_style()
 	Dialogic.signal_event.connect(_on_dialogic_text_signal)
 	Dialogic.start("intro_1")
