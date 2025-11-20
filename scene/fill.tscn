@@ -55,6 +55,7 @@ script = ExtResource("4_0gapt")
 kana_selection = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ButtonUi/Area2D2"]
+visible = false
 polygon = PackedVector2Array(9, -167, 46, -193, 96, -214, 131, -222, 156, -224, 194, -223, 227, -216, 261, -206, 287, -191, 326, -163, 237, -59, 211, -76, 190, -83, 168, -86, 139, -81, 120, -74, 101, -62)
 
 [node name="Area2D3" type="Area2D" parent="ButtonUi"]
@@ -63,6 +64,7 @@ script = ExtResource("4_0gapt")
 kana_selection = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ButtonUi/Area2D3"]
+visible = false
 position = Vector2(170, -152)
 rotation = 1.48627
 polygon = PackedVector2Array(9.85985, -163.752, 46, -193, 96, -214, 131, -222, 156, -224, 194, -223, 227, -216, 261, -206, 287, -191, 288.589, -184.294, 222.996, -73.4359, 211, -76, 190, -83, 168, -86, 139, -81, 120, -74, 101, -62)
@@ -73,6 +75,7 @@ script = ExtResource("4_0gapt")
 kana_selection = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ButtonUi/Area2D5"]
+visible = false
 position = Vector2(322, -28)
 rotation = -3.5747
 polygon = PackedVector2Array(19.9528, -167.051, 53.2175, -186.762, 96.7089, -204.097, 127.82, -209.719, 158.271, -208.859, 188.722, -208, 217.495, -203.51, 226.435, -203.783, 244.588, -195.389, 255.48, -190.352, 201.759, -74.1713, 194.497, -77.5288, 187.236, -80.8864, 165.725, -82.019, 138.905, -81.1997, 120, -74, 101, -62)
@@ -83,6 +86,7 @@ script = ExtResource("4_0gapt")
 kana_selection = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ButtonUi/Area2D4"]
+visible = false
 position = Vector2(278, 144)
 rotation = -2.41354
 polygon = PackedVector2Array(17.7111, -160.469, 53.2175, -186.762, 96.7089, -204.097, 125.595, -213.771, 154.157, -217.797, 193.69, -215.528, 224.589, -210.921, 255.165, -200.666, 249.193, -195.343, 255.165, -200.666, 202.852, -79.0138, 202.852, -79.0138, 190, -83, 168, -86, 139, -81, 120, -74, 101, -62)
@@ -93,6 +97,7 @@ script = ExtResource("4_0gapt")
 kana_selection = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonUi/Area2D"]
+visible = false
 position = Vector2(47, -12)
 shape = ExtResource("6_vcbec")
 
