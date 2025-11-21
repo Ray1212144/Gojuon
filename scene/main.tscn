@@ -90,7 +90,6 @@ _data = {
 script = ExtResource("1_4j5ol")
 canvas_animation_player = NodePath("CanvasLayer/CanvasAnimationPlayer")
 player = NodePath("あ")
-intro = true
 
 [node name="あ" parent="." instance=ExtResource("2_0ha60")]
 
@@ -131,9 +130,10 @@ texture = ExtResource("3_tqoya")
 
 [node name="PlacePostion1" parent="." instance=ExtResource("3_b5f6u")]
 
-[node name="Place1" type="Node2D" parent="PlacePostion1" node_paths=PackedStringArray("bonfire")]
+[node name="Place1" type="Node2D" parent="PlacePostion1" node_paths=PackedStringArray("bonfire", "success_area")]
 script = ExtResource("4_b5f6u")
 bonfire = NodePath("Bonfire")
+success_area = NodePath("SucessArea2D")
 
 [node name="Area" type="Node2D" parent="PlacePostion1/Place1"]
 
@@ -252,9 +252,10 @@ position = Vector2(382, -105.000015)
 [node name="PlacePostion2" parent="." instance=ExtResource("3_b5f6u")]
 position = Vector2(373, 354)
 
-[node name="Place2" type="Node2D" parent="PlacePostion2" node_paths=PackedStringArray("bonfire")]
+[node name="Place2" type="Node2D" parent="PlacePostion2" node_paths=PackedStringArray("bonfire", "success_area")]
 script = ExtResource("4_tqoya")
 bonfire = NodePath("Bonfire")
+success_area = NodePath("SucessArea2D")
 
 [node name="Bonfire" parent="PlacePostion2/Place2" node_paths=PackedStringArray("place") instance=ExtResource("8_hybxs")]
 position = Vector2(343, -189)

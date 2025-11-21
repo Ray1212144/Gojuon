@@ -13,7 +13,6 @@ config_version=5
 config/name="Gojuon"
 run/main_scene="uid://o55eh0r742kd"
 config/features=PackedStringArray("4.5", "Forward Plus")
-run/max_fps=144
 config/icon="res://asset/Sprite/icon.svg"
 
 [audio]
@@ -81,7 +80,7 @@ layout/default_style="Default"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/vsync/vsync_mode=0
+window/vsync/vsync_mode=3
 
 [editor_plugins]
 

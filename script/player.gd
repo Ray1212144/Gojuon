@@ -5,7 +5,8 @@ class_name Player
 var speed :float
 @export var animation_player: AnimationPlayer
 @export var bonfire : Bonfire
-@export var default_speed : float = 300
+@export var default_speed : float = 600
+
 
 # 动画名称常量
 const ANIM_WALK_DOWN = "walk_down"
