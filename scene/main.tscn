@@ -1,14 +1,16 @@
-[gd_scene load_steps=16 format=4 uid="uid://o55eh0r742kd"]
+[gd_scene load_steps=17 format=4 uid="uid://o55eh0r742kd"]
 
 [ext_resource type="Script" uid="uid://bx04uuyksavrn" path="res://script/main.gd" id="1_4j5ol"]
 [ext_resource type="PackedScene" uid="uid://bt5rus4vk3pfx" path="res://scene/character/あ.tscn" id="2_0ha60"]
-[ext_resource type="Script" uid="uid://bnoyhillxnmk8" path="res://script/place_postion.gd" id="3_b5f6u"]
+[ext_resource type="PackedScene" uid="uid://tgmexrqfxrms" path="res://scene/place_postion.tscn" id="3_b5f6u"]
+[ext_resource type="Texture2D" uid="uid://6dop475lhpyr" path="res://asset/Sprite/鎻掑叆鍥剧墖.png" id="3_tqoya"]
+[ext_resource type="Script" uid="uid://duqs0nmqhqffv" path="res://scene/place_1.gd" id="4_b5f6u"]
 [ext_resource type="Script" uid="uid://borabyu7i5yrc" path="res://script/place.gd" id="4_tqoya"]
 [ext_resource type="PackedScene" uid="uid://dl13gwq18wsw7" path="res://scene/explode_area.tscn" id="5_k65ib"]
 [ext_resource type="PackedScene" uid="uid://dv77holfwabvd" path="res://scene/check_area.tscn" id="6_wscrc"]
 [ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://tres/bricks.tres" id="7_mswub"]
 [ext_resource type="PackedScene" uid="uid://buxnl7k1t1loc" path="res://scene/bonfire.tscn" id="8_hybxs"]
-[ext_resource type="Script" uid="uid://bfsmiyd1c1ry0" path="res://script/sucess_area_2d.gd" id="9_v2gmf"]
+[ext_resource type="PackedScene" uid="uid://d27i5nyljpbw3" path="res://scene/sucess_area_2d.tscn" id="10_k65ib"]
 
 [sub_resource type="Animation" id="Animation_p1hux"]
 length = 0.001
@@ -84,16 +86,16 @@ _data = {
 &"blackscreen_outro": SubResource("Animation_0ha60")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdb0y"]
-
 [node name="Main" type="Node2D" node_paths=PackedStringArray("canvas_animation_player", "player")]
 script = ExtResource("1_4j5ol")
 canvas_animation_player = NodePath("CanvasLayer/CanvasAnimationPlayer")
 player = NodePath("あ")
+intro = true
 
 [node name="あ" parent="." instance=ExtResource("2_0ha60")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 999
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -110,130 +112,159 @@ libraries = {
 &"": SubResource("AnimationLibrary_p1hux")
 }
 
-[node name="PlacePostion" type="Node2D" parent="."]
-script = ExtResource("3_b5f6u")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_tqoya")
 
-[node name="Place1" type="Node2D" parent="PlacePostion" node_paths=PackedStringArray("bonfire")]
-script = ExtResource("4_tqoya")
+[node name="PlacePostion1" parent="." instance=ExtResource("3_b5f6u")]
+
+[node name="Place1" type="Node2D" parent="PlacePostion1" node_paths=PackedStringArray("bonfire")]
+script = ExtResource("4_b5f6u")
 bonfire = NodePath("Bonfire")
 
-[node name="Area" type="Node2D" parent="PlacePostion/Place1"]
+[node name="Area" type="Node2D" parent="PlacePostion1/Place1"]
 
-[node name="ExplodeArea" parent="PlacePostion/Place1/Area" instance=ExtResource("5_k65ib")]
+[node name="ExplodeArea" parent="PlacePostion1/Place1/Area" instance=ExtResource("5_k65ib")]
 position = Vector2(125, -15)
 scale_x = 4
 
-[node name="CheckArea" parent="PlacePostion/Place1/Area/ExplodeArea" instance=ExtResource("6_wscrc")]
+[node name="CheckArea" parent="PlacePostion1/Place1/Area/ExplodeArea" instance=ExtResource("6_wscrc")]
 position = Vector2(-49, 2)
 
-[node name="ExplodeArea2" parent="PlacePostion/Place1/Area" instance=ExtResource("5_k65ib")]
+[node name="ExplodeArea2" parent="PlacePostion1/Place1/Area" instance=ExtResource("5_k65ib")]
 position = Vector2(255, -15)
 scale_x = 4
 
-[node name="CheckArea" parent="PlacePostion/Place1/Area/ExplodeArea2" instance=ExtResource("6_wscrc")]
+[node name="CheckArea" parent="PlacePostion1/Place1/Area/ExplodeArea2" instance=ExtResource("6_wscrc")]
 position = Vector2(-49, 2)
 target_kana_selection = 2
 
-[node name="ExplodeArea3" parent="PlacePostion/Place1/Area" instance=ExtResource("5_k65ib")]
+[node name="ExplodeArea3" parent="PlacePostion1/Place1/Area" instance=ExtResource("5_k65ib")]
 position = Vector2(281, -207)
 
-[node name="CheckArea" parent="PlacePostion/Place1/Area/ExplodeArea3" instance=ExtResource("6_wscrc")]
+[node name="CheckArea" parent="PlacePostion1/Place1/Area/ExplodeArea3" instance=ExtResource("6_wscrc")]
 position = Vector2(-11, 2)
 target_kana_selection = 4
 
-[node name="ExplodeArea4" parent="PlacePostion/Place1/Area" instance=ExtResource("5_k65ib")]
+[node name="ExplodeArea4" parent="PlacePostion1/Place1/Area" instance=ExtResource("5_k65ib")]
 position = Vector2(284, -158)
 
-[node name="CheckArea" parent="PlacePostion/Place1/Area/ExplodeArea4" instance=ExtResource("6_wscrc")]
+[node name="CheckArea" parent="PlacePostion1/Place1/Area/ExplodeArea4" instance=ExtResource("6_wscrc")]
 position = Vector2(-14, 2)
 target_kana_selection = 2
 
-[node name="ExplodeArea5" parent="PlacePostion/Place1/Area" instance=ExtResource("5_k65ib")]
+[node name="ExplodeArea5" parent="PlacePostion1/Place1/Area" instance=ExtResource("5_k65ib")]
 position = Vector2(283, -62)
 
-[node name="CheckArea" parent="PlacePostion/Place1/Area/ExplodeArea5" instance=ExtResource("6_wscrc")]
+[node name="CheckArea" parent="PlacePostion1/Place1/Area/ExplodeArea5" instance=ExtResource("6_wscrc")]
 position = Vector2(-14, 2)
 target_kana_selection = 1
 
-[node name="CheckArea2" parent="PlacePostion/Place1/Area/ExplodeArea5" instance=ExtResource("6_wscrc")]
+[node name="CheckArea2" parent="PlacePostion1/Place1/Area/ExplodeArea5" instance=ExtResource("6_wscrc")]
 position = Vector2(18, 3)
 target_kana_selection = 3
 
-[node name="ExplodeArea6" parent="PlacePostion/Place1/Area" instance=ExtResource("5_k65ib")]
+[node name="ExplodeArea6" parent="PlacePostion1/Place1/Area" instance=ExtResource("5_k65ib")]
 position = Vector2(299, -87)
 scale_y = 2
 
-[node name="CheckArea" parent="PlacePostion/Place1/Area/ExplodeArea6" instance=ExtResource("6_wscrc")]
+[node name="CheckArea" parent="PlacePostion1/Place1/Area/ExplodeArea6" instance=ExtResource("6_wscrc")]
 position = Vector2(3, 28)
 target_kana_selection = 3
 
-[node name="ExplodeArea7" parent="PlacePostion/Place1/Area" instance=ExtResource("5_k65ib")]
+[node name="ExplodeArea7" parent="PlacePostion1/Place1/Area" instance=ExtResource("5_k65ib")]
 position = Vector2(77, -35)
 scale_y = 2
 
-[node name="CheckArea" parent="PlacePostion/Place1/Area/ExplodeArea7" instance=ExtResource("6_wscrc")]
+[node name="CheckArea" parent="PlacePostion1/Place1/Area/ExplodeArea7" instance=ExtResource("6_wscrc")]
 position = Vector2(-1, 22)
 
-[node name="ExplodeArea8" parent="PlacePostion/Place1/Area" instance=ExtResource("5_k65ib")]
+[node name="ExplodeArea8" parent="PlacePostion1/Place1/Area" instance=ExtResource("5_k65ib")]
 position = Vector2(77, -87)
 scale_y = 2
 
-[node name="CheckArea" parent="PlacePostion/Place1/Area/ExplodeArea8" instance=ExtResource("6_wscrc")]
+[node name="CheckArea" parent="PlacePostion1/Place1/Area/ExplodeArea8" instance=ExtResource("6_wscrc")]
 position = Vector2(0, -22)
 target_kana_selection = 1
 
-[node name="ExplodeArea9" parent="PlacePostion/Place1/Area" instance=ExtResource("5_k65ib")]
+[node name="ExplodeArea9" parent="PlacePostion1/Place1/Area" instance=ExtResource("5_k65ib")]
 position = Vector2(157, -205)
 scale_x = 7
 
-[node name="CheckArea" parent="PlacePostion/Place1/Area/ExplodeArea9" instance=ExtResource("6_wscrc")]
+[node name="CheckArea" parent="PlacePostion1/Place1/Area/ExplodeArea9" instance=ExtResource("6_wscrc")]
 position = Vector2(-77, 1)
 
-[node name="ExplodeArea10" parent="PlacePostion/Place1/Area" instance=ExtResource("5_k65ib")]
+[node name="ExplodeArea10" parent="PlacePostion1/Place1/Area" instance=ExtResource("5_k65ib")]
 position = Vector2(154, -158)
 scale_x = 7
 
-[node name="CheckArea" parent="PlacePostion/Place1/Area/ExplodeArea10" instance=ExtResource("6_wscrc")]
+[node name="CheckArea" parent="PlacePostion1/Place1/Area/ExplodeArea10" instance=ExtResource("6_wscrc")]
 position = Vector2(-75, 1)
 target_kana_selection = 4
 
-[node name="ExplodeArea12" parent="PlacePostion/Place1/Area" instance=ExtResource("5_k65ib")]
+[node name="ExplodeArea12" parent="PlacePostion1/Place1/Area" instance=ExtResource("5_k65ib")]
 position = Vector2(188, -62)
 scale_x = 7
 
-[node name="CheckArea" parent="PlacePostion/Place1/Area/ExplodeArea12" instance=ExtResource("6_wscrc")]
+[node name="CheckArea" parent="PlacePostion1/Place1/Area/ExplodeArea12" instance=ExtResource("6_wscrc")]
 position = Vector2(-78, 1)
 target_kana_selection = 2
 
-[node name="CheckArea2" parent="PlacePostion/Place1/Area/ExplodeArea12" instance=ExtResource("6_wscrc")]
+[node name="CheckArea2" parent="PlacePostion1/Place1/Area/ExplodeArea12" instance=ExtResource("6_wscrc")]
 position = Vector2(82, 1)
 target_kana_selection = 1
 
-[node name="ExplodeArea11" parent="PlacePostion/Place1/Area" instance=ExtResource("5_k65ib")]
+[node name="ExplodeArea11" parent="PlacePostion1/Place1/Area" instance=ExtResource("5_k65ib")]
 position = Vector2(172, -106)
 scale_x = 8
 
-[node name="CheckArea" parent="PlacePostion/Place1/Area/ExplodeArea11" instance=ExtResource("6_wscrc")]
+[node name="CheckArea" parent="PlacePostion1/Place1/Area/ExplodeArea11" instance=ExtResource("6_wscrc")]
 position = Vector2(-94, -1)
 target_kana_selection = 1
 
-[node name="TileMapLayer" type="TileMapLayer" parent="PlacePostion/Place1"]
+[node name="TileMapLayer" type="TileMapLayer" parent="PlacePostion1/Place1"]
 position = Vector2(68, -14)
-tile_map_data = PackedByteArray("AAAAAP3/AAAAAAAABgACAPT/AAAAAAAAAQACAPf/AAAAAAAAAQACAPr/AAAAAAAAAQACAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAEAP3/AAAAAAAAAQAEAPr/AAAAAAAAAQAEAPf/AAAAAAAAAQAEAPT/AAAAAAAAAQAAAPT/AQAAAAAAAQAAAPf/AQAAAAAAAQAAAPr/AQAAAAAAAQAAAAAAAQAAAAAAAQACAP3/AQAAAAAAAQAGAPT/AAAAAAAAAQAGAPf/AAAAAAAAAQAGAPr/AAAAAAAAAQAGAP3/AAAAAAAAAQAGAAAAAAAAAAAAAQAIAAAAAQAAAAAAAQAIAP3/AAAAAAAAAQAIAPr/AAAAAAAAAQAIAPf/AAAAAAAAAQAIAPT/AAAAAAAAAQAKAPT/AAAAAAAAAQAKAPf/AAAAAAAAAQAKAPr/AAAAAAAAAQAKAP3/AAAAAAAAAQAKAAAAAAAAAAAAAQAMAAAAAAAAAAAAAQAMAPr/AAAAAAAAAQAMAP3/AQAAAAAAAQAMAPf/AQAAAAAAAQAMAPT/AQAAAAAAAQAOAPT/AAAAAAAAAQAOAPf/AAAAAAAAAQAOAPr/AAAAAAAAAQAOAP3/AQAAAAAAAQAOAAAAAAAAAAAAAQDu/+7/AgAAAAEAAADu/+//AgAAAAEAAADu//D/AgAAAAEAAADu//H/AgAAAAEAAADu//L/AgAAAAEAAADu//P/AgAAAAEAAADu//T/AgAAAAEAAADu//X/AgAAAAEAAADu//b/AgAAAAEAAADu//f/AgAAAAEAAADu//j/AgAAAAEAAADu//n/AgAAAAEAAADu//r/AgAAAAEAAADu//v/AgAAAAEAAADu//z/AgAAAAEAAADu//3/AgAAAAEAAADu//7/AgAAAAEAAADu////AgAAAAEAAADu/wAAAgAAAAEAAADu/wEAAgAAAAEAAADu/wIAAgAAAAEAAADu/wMAAgAAAAEAAADu/wQAAgAAAAEAAADv//H/AgAAAAEAAADw//H/AgAAAAEAAADx//H/AgAAAAEAAADy//H/AgAAAAEAAADz//H/AgAAAAEAAAD0//H/AgAAAAEAAAD1//H/AgAAAAEAAAD2//H/AgAAAAEAAAD3//H/AgAAAAEAAAD4//H/AgAAAAEAAAD5//H/AgAAAAEAAAD6//H/AgAAAAEAAAD7//H/AgAAAAEAAAD8//H/AgAAAAEAAAD9//H/AgAAAAEAAAD+//H/AgAAAAEAAAD///H/AgAAAAEAAAAAAPH/AgAAAAEAAAABAPH/AgAAAAEAAAACAPH/AgAAAAEAAAADAPH/AgAAAAEAAAAEAPH/AgAAAAEAAAAFAPH/AgAAAAEAAAAGAPH/AgAAAAEAAAAHAPH/AgAAAAEAAAAIAPH/AgAAAAEAAAAJAPH/AgAAAAEAAAAKAPH/AgAAAAEAAAALAPH/AgAAAAEAAAAMAPH/AgAAAAEAAAANAPH/AgAAAAEAAAAOAPH/AgAAAAEAAAAPAPH/AgAAAAEAAAAQAPH/AgAAAAEAAAARAPH/AgAAAAEAAAASAPH/AgAAAAEAAAATAPH/AgAAAAEAAAATAPL/AgAAAAEAAAATAPP/AgAAAAEAAAATAPT/AgAAAAEAAAATAPX/AgAAAAEAAAATAPb/AgAAAAEAAAATAPf/AgAAAAEAAAATAPj/AgAAAAEAAAATAPn/AgAAAAEAAAATAPr/AgAAAAEAAAATAPv/AgAAAAEAAAATAPz/AgAAAAEAAAATAP3/AgAAAAEAAAATAP7/AgAAAAEAAAATAP//AgAAAAEAAAATAAAAAgAAAAEAAAATAAEAAgAAAAEAAAATAAIAAgAAAAEAAAASAAIAAgAAAAEAAAARAAIAAgAAAAEAAAAQAAIAAgAAAAEAAAAPAAIAAgAAAAEAAAAOAAIAAgAAAAEAAAANAAIAAgAAAAEAAAAMAAIAAgAAAAEAAAALAAIAAgAAAAEAAAAKAAIAAgAAAAEAAAAJAAIAAgAAAAEAAAAIAAIAAgAAAAEAAAAHAAIAAgAAAAEAAAAGAAIAAgAAAAEAAAAFAAIAAgAAAAEAAAAEAAIAAgAAAAEAAAADAAIAAgAAAAEAAAACAAIAAgAAAAEAAAABAAIAAgAAAAEAAAAAAAIAAgAAAAEAAAD//wIAAgAAAAEAAAD+/wIAAgAAAAEAAAD9/wIAAgAAAAEAAAD8/wIAAgAAAAEAAAD7/wIAAgAAAAEAAAD6/wIAAgAAAAEAAAD5/wIAAgAAAAEAAAD4/wIAAgAAAAEAAAD3/wIAAgAAAAEAAAD2/wIAAgAAAAEAAAD1/wIAAgAAAAEAAAD0/wIAAgAAAAEAAADz/wIAAgAAAAEAAADy/wIAAgAAAAEAAADx/wIAAgAAAAEAAADw/wIAAgAAAAEAAADv/wIAAgAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAP3/AAAAAAAABgACAPT/AAAAAAAAAQACAPf/AAAAAAAAAQACAPr/AAAAAAAAAQACAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAEAP3/AAAAAAAAAQAEAPr/AAAAAAAAAQAEAPf/AAAAAAAAAQAEAPT/AAAAAAAAAQAAAPT/AQAAAAAAAQAAAPf/AQAAAAAAAQAAAPr/AQAAAAAAAQAAAAAAAQAAAAAAAQACAP3/AQAAAAAAAQAGAPT/AAAAAAAAAQAGAPf/AAAAAAAAAQAGAPr/AAAAAAAAAQAGAP3/AAAAAAAAAQAGAAAAAAAAAAAAAQAIAAAAAQAAAAAAAQAIAP3/AAAAAAAAAQAIAPr/AAAAAAAAAQAIAPf/AAAAAAAAAQAIAPT/AAAAAAAAAQAKAPT/AAAAAAAAAQAKAPf/AAAAAAAAAQAKAPr/AAAAAAAAAQAKAP3/AAAAAAAAAQAKAAAAAAAAAAAAAQAMAAAAAAAAAAAAAQAMAPr/AAAAAAAAAQAMAP3/AQAAAAAAAQAMAPf/AQAAAAAAAQAMAPT/AQAAAAAAAQAOAPT/AAAAAAAAAQAOAPf/AAAAAAAAAQAOAPr/AAAAAAAAAQAOAP3/AQAAAAAAAQAOAAAAAAAAAAAAAQA=")
 tile_set = ExtResource("7_mswub")
 
-[node name="Bonfire" parent="PlacePostion/Place1" node_paths=PackedStringArray("place") instance=ExtResource("8_hybxs")]
+[node name="Bonfire" parent="PlacePostion1/Place1" node_paths=PackedStringArray("place") instance=ExtResource("8_hybxs")]
 position = Vector2(-121, -76)
 place = NodePath("..")
 file_path = "res://scene/place/place_1.tscn"
 
-[node name="SucessArea2D" type="Area2D" parent="PlacePostion/Place1"]
-visible = false
-position = Vector2(344.00003, -105)
-scale = Vector2(1.28, 17.52)
-script = ExtResource("9_v2gmf")
+[node name="SucessArea2D" parent="PlacePostion1/Place1" instance=ExtResource("10_k65ib")]
+visible = true
+position = Vector2(382, -105.000015)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacePostion/Place1/SucessArea2D"]
-shape = SubResource("RectangleShape2D_bdb0y")
+[node name="PlacePostion2" parent="." instance=ExtResource("3_b5f6u")]
+position = Vector2(373, 354)
 
-[connection signal="body_entered" from="PlacePostion/Place1/SucessArea2D" to="PlacePostion/Place1/SucessArea2D" method="_on_body_entered"]
+[node name="Place2" type="Node2D" parent="PlacePostion2" node_paths=PackedStringArray("bonfire")]
+script = ExtResource("4_tqoya")
+bonfire = NodePath("Bonfire")
+
+[node name="Bonfire" parent="PlacePostion2/Place2" node_paths=PackedStringArray("place") instance=ExtResource("8_hybxs")]
+position = Vector2(343, -189)
+place = NodePath("..")
+file_path = "res://scene/place/place_1.tscn"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="PlacePostion2/Place2"]
+tile_map_data = PackedByteArray("AAAVAPv/AQAAAAAAAQATAPv/AAAAAAAAAQARAPv/AQAAAAAAAQAPAPv/AAAAAAAAAQANAPv/AAAAAAAAAQALAPv/AQAAAAAAAQAJAPv/AAAAAAAAAQAHAPv/AQAAAAAAAQATAP7/AAAAAAAAAQARAP7/AAAAAAAAAQAPAP7/AQAAAAAAAQANAP7/AQAAAAAAAQALAP7/AAAAAAAAAQAJAP7/AAAAAAAAAQAHAP7/AQAAAAAAAQAFAP7/AQAAAAAAAQARAAEAAQAAAAAAAQAPAAEAAAAAAAAAAQANAAEAAAAAAAAAAQALAAEAAAAAAAAAAQAJAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAFAAEAAAAAAAAAAQADAAEAAQAAAAAAAQAQAAQAAAAAAAAAAQAOAAQAAQAAAAAAAQAMAAQAAAAAAAAAAQAKAAQAAAAAAAAAAQAIAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQAEAAQAAQAAAAAAAQACAAQAAQAAAAAAAQA=")
+tile_set = ExtResource("7_mswub")
+
+[node name="SucessArea2D" parent="PlacePostion2/Place2" instance=ExtResource("10_k65ib")]
+visible = true
+position = Vector2(-58, 14.000002)

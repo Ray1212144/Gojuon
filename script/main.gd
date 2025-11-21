@@ -3,6 +3,7 @@ class_name Main
 
 @export var canvas_animation_player : AnimationPlayer
 @export var player:Player
+@export var intro : bool
 
 # 硬编码的资源路径列表
 var style_paths = [
@@ -17,18 +18,23 @@ func _ready() -> void:
 	var cursor_scene = preload("res://scene/controller_cursor.tscn")
 	var controller_cursor = cursor_scene.instantiate()
 	add_child(controller_cursor)
-
 	load_style()
 	Dialogic.signal_event.connect(_on_dialogic_text_signal)
-	Dialogic.start("intro_1")
+	if intro:
+		Dialogic.start("intro_1")
 
 func _on_dialogic_text_signal(argument:String):
 	if argument == "blackout":
 		canvas_animation_player.play("black_out")
+	elif argument == "show_graph":
+		$CanvasLayer/TextureRect.show()
 	elif argument == "disable_player":
 		player.speed = 0
 	elif argument == "enable_player":
 		player.speed = player.default_speed
+	elif argument == "hide_graph":
+		$CanvasLayer/TextureRect.hide()
+		
 func load_style():
 	for path in style_paths:
 		var resource = load(path)

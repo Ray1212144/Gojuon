@@ -28,11 +28,15 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "あ安鯉": "res://dialogue/character/あ安鯉.dch",
-"い以実": "res://dialogue/character/い以実.dch"
+"い以実": "res://dialogue/character/い以実.dch",
+"う宇京": "res://asset/Sprite/う宇京.dch",
+"え衣羽": "res://asset/Portraits/う/え衣羽.dch",
+"お：於松": "res://asset/Portraits/え/お：於松.dch",
+"ゑ惠縁": "res://asset/Portraits/お/ゑ惠縁.dch"
 }
 directories/dtl_directory={
-"intro_1": "res://dialogue/timeline/intro_1.dtl",
-"intro_2": "res://dialogue/timeline/intro_2.dtl"
+"c1_l1": "res://dialogue/timeline/chapter_1/c1_l1.dtl",
+"intro_1": "res://dialogue/timeline/chapter_1/intro_1.dtl"
 }
 layout/style_directory={}
 extensions_folder="res://addons/dialogic_additions"

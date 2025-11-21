@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d27i5nyljpbw3"]
+
+[ext_resource type="Script" uid="uid://bfsmiyd1c1ry0" path="res://script/sucess_area_2d.gd" id="1_0x3kh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdb0y"]
+
+[node name="SucessArea2D" type="Area2D"]
+visible = false
+scale = Vector2(1.28, 17.52)
+script = ExtResource("1_0x3kh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bdb0y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
