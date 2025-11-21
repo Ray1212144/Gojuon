@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bg48xxf3pxae5" path="res://asset/UI ling/选中2.png" id="3_e8k7p"]
 [ext_resource type="Texture2D" uid="uid://psewrvdx5mj5" path="res://asset/UI ling/选中3.png" id="4_wxok8"]
 [ext_resource type="Texture2D" uid="uid://dy7tb5v664d70" path="res://asset/UI ling/选中4.png" id="5_05fsy"]
-[ext_resource type="Texture2D" uid="uid://ca24xe4sjgkku" path="res://asset/UI ling/选中5.png" id="6_348ps"]
+[ext_resource type="Texture2D" uid="uid://bwftvfxjsqf4" path="res://asset/UI ling/閫変腑5.png" id="6_g6qix"]
 
 [resource]
 animations = [{
@@ -26,7 +26,7 @@ animations = [{
 "texture": ExtResource("5_05fsy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_348ps")
+"texture": ExtResource("6_g6qix")
 }],
 "loop": true,
 "name": &"default",
