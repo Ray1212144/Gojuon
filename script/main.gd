@@ -23,9 +23,12 @@ func _ready() -> void:
 	Dialogic.start("intro_1")
 
 func _on_dialogic_text_signal(argument:String):
-	if argument == "blackout" and canvas_animation_player:
+	if argument == "blackout":
 		canvas_animation_player.play("black_out")
-
+	elif argument == "disable_player":
+		player.speed = 0
+	elif argument == "enable_player":
+		player.speed = player.default_speed
 func load_style():
 	for path in style_paths:
 		var resource = load(path)

@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=4 uid="uid://blpr2gos1kxo6"]
 
-[ext_resource type="Script" uid="uid://borabyu7i5yrc" path="res://scene/place/place.gd" id="1_840j5"]
+[ext_resource type="Script" uid="uid://borabyu7i5yrc" path="res://script/place.gd" id="1_840j5"]
 [ext_resource type="PackedScene" uid="uid://dl13gwq18wsw7" path="res://scene/explode_area.tscn" id="1_bdb0y"]
 [ext_resource type="PackedScene" uid="uid://dv77holfwabvd" path="res://scene/check_area.tscn" id="2_840j5"]
-[ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://scene/bricks.tres" id="3_5iq60"]
+[ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://tres/bricks.tres" id="3_5iq60"]
 [ext_resource type="PackedScene" uid="uid://buxnl7k1t1loc" path="res://scene/bonfire.tscn" id="5_bdb0y"]
-[ext_resource type="Script" uid="uid://bfsmiyd1c1ry0" path="res://scene/place/sucess_area_2d.gd" id="6_840j5"]
+[ext_resource type="Script" uid="uid://bfsmiyd1c1ry0" path="res://script/sucess_area_2d.gd" id="6_840j5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bdb0y"]
 

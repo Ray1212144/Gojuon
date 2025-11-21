@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://buxnl7k1t1loc"]
 
 [ext_resource type="Texture2D" uid="uid://b50sekkr7evd" path="res://asset/Sprite/icon.svg" id="1_g21no"]
-[ext_resource type="Script" uid="uid://bd7b0otxxibtf" path="res://scene/bonfire.gd" id="2_dqqxp"]
+[ext_resource type="Script" uid="uid://bd7b0otxxibtf" path="res://script/bonfire.gd" id="2_dqqxp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g21no"]
 radius = 92.0

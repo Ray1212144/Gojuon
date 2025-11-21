@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ba3d6tlu7xloy"]
 
 [ext_resource type="Texture2D" uid="uid://b50sekkr7evd" path="res://asset/Sprite/icon.svg" id="1_qv5ro"]
-[ext_resource type="Script" uid="uid://hhfy8ee4xi12" path="res://scene/fire_key.gd" id="2_640d8"]
+[ext_resource type="Script" uid="uid://hhfy8ee4xi12" path="res://script/fire_key.gd" id="2_640d8"]
 
 [node name="FireKey" type="TextureRect"]
 custom_minimum_size = Vector2(50, 50)

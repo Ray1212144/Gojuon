@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=4 uid="uid://kj3s2uo6dk28"]
 
-[ext_resource type="Script" uid="uid://borabyu7i5yrc" path="res://scene/place/place.gd" id="1_wtngc"]
+[ext_resource type="Script" uid="uid://borabyu7i5yrc" path="res://script/place.gd" id="1_wtngc"]
 [ext_resource type="PackedScene" uid="uid://dl13gwq18wsw7" path="res://scene/explode_area.tscn" id="2_hpdif"]
 [ext_resource type="PackedScene" uid="uid://dv77holfwabvd" path="res://scene/check_area.tscn" id="3_nxf8m"]
-[ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://scene/bricks.tres" id="4_hpftx"]
+[ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://tres/bricks.tres" id="4_hpftx"]
 [ext_resource type="PackedScene" uid="uid://buxnl7k1t1loc" path="res://scene/bonfire.tscn" id="5_g67pd"]
 
 [node name="Place2" type="Node2D" node_paths=PackedStringArray("bonfire")]

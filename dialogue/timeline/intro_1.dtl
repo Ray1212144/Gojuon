@@ -1,3 +1,4 @@
+[signal arg="disable_player"]
 join い以実 (反转-普通) right
 い以実 (反转-慌张): 安鯉くん！！大変なことが……！！
 join あ安鯉 left
@@ -9,3 +10,4 @@ join あ安鯉 left
 あ安鯉 (担心): 一体なにがあった？
 い以実: 於松と一緒に森でキノコ採ってたら
 い以実 (反转-慌张): クックールが襲ってきて…
+[signal arg="enable_player"]

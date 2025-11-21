@@ -2,10 +2,10 @@ extends CharacterBody2D
 class_name Player
 
 # 移动速度（像素/秒）
-@export var speed: float = 600
+var speed :float
 @export var animation_player: AnimationPlayer
 @export var bonfire : Bonfire
-
+@export var default_speed : float = 300
 
 # 动画名称常量
 const ANIM_WALK_DOWN = "walk_down"
@@ -16,6 +16,10 @@ const ANIM_WALK_RIGHT = "walk_right"
 # 当前朝向
 var current_direction = Vector2.DOWN
 var last_direction = Vector2.DOWN
+
+func _ready() -> void:
+	speed =  default_speed
+
 
 func _physics_process(delta: float) -> void:
 	# 获取输入方向

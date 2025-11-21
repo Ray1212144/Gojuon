@@ -1,12 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxhfeuecjtu80"]
 
 [ext_resource type="Script" uid="uid://bmiy26g2nt7e" path="res://script/player.gd" id="1_hjaqi"]
-[ext_resource type="Script" uid="uid://b76a23sqken00" path="res://scene/character/inventory.gd" id="2_hovdd"]
+[ext_resource type="Script" uid="uid://b76a23sqken00" path="res://script/inventory.gd" id="2_hovdd"]
 [ext_resource type="PackedScene" uid="uid://ba3d6tlu7xloy" path="res://scene/fire_key.tscn" id="3_5utgv"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_hjaqi")
-speed = 300.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
