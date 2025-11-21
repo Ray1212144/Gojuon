@@ -35,6 +35,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "c1_l1": "res://dialogue/timeline/chapter_1/c1_l1.dtl",
+"c1_l3": "res://dialogue/timeline/chapter_1/c1_l3.dtl",
 "intro_1": "res://dialogue/timeline/chapter_1/intro_1.dtl"
 }
 layout/style_directory={}
@@ -96,6 +97,7 @@ button_ui=""
 player=""
 bonfire=""
 snapable=""
+next_level=""
 
 [input]
 

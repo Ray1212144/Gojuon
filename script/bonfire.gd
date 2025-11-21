@@ -11,15 +11,12 @@ var place_position : PlacePostion
 # 标识此篝火是否为当前激活的复活点
 var is_active: bool = false
 var has_pass : bool = false
+var last_fire : Bonfire
 
 func _ready() -> void:
 	place_position = place.get_parent()
 	has_pass = place_position.has_pass
 	
-
-
-
-
 func call_reset():
 	if has_pass:
 		main.travel_fire()
@@ -43,6 +40,9 @@ func _on_button_pressed() -> void:
 	var fire = get_tree().get_nodes_in_group("bonfire")
 	for i:Bonfire in fire:
 		i.is_active = false 
+		if last_fire != null:
+			if i == last_fire:
+				last_fire.has_pass = true
 	is_active = true
 
 
@@ -54,3 +54,8 @@ func _on_area_2d_body_entered(body) -> void:
 func _on_area_2d_body_exited(body) -> void:
 	if body is Player:
 		player_entered = false
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("next_level"):
+		last_fire = area.get_parent().bonfire

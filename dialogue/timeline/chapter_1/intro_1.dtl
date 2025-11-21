@@ -1,4 +1,5 @@
 [signal arg="disable_player"]
+[background arg="res://asset/Sprite/鑳屾櫙.jpeg" fade="0.0"]
 join い以実 (反转-普通) rightmost
 い以実 (反转-慌张): 安鯉くん！！大変なことが……！！
 join あ安鯉 leftmost

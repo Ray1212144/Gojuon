@@ -51,8 +51,10 @@ func load_style():
 			print("错误: 无法加载资源: ", path)
 
 func travel_fire():
+	canvas_animation_player.play("blackscreen_intro")
+	await  canvas_animation_player.animation_finished
 	player.global_position = player.bonfire.check_point.global_position
-
+	canvas_animation_player.play("blackscreen_outro")
 
 # 根据节点路径和场景文件路径加载并添加场景
 func reset(position_node_path: String, file_path: String):
@@ -61,7 +63,7 @@ func reset(position_node_path: String, file_path: String):
 	print(file_path)
 	canvas_animation_player.play("blackscreen_intro")
 	await  canvas_animation_player.animation_finished
-	travel_fire()
+	player.global_position = player.bonfire.check_point.global_position
 	# 1. 检查文件是否存在
 	if not FileAccess.file_exists(file_path):
 		push_error("场景文件不存在: " + file_path)

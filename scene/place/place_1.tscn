@@ -1,13 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://blpr2gos1kxo6"]
+[gd_scene load_steps=6 format=4 uid="uid://blpr2gos1kxo6"]
 
-[ext_resource type="Script" uid="uid://borabyu7i5yrc" path="res://script/place.gd" id="1_840j5"]
+[ext_resource type="Script" uid="uid://duqs0nmqhqffv" path="res://scene/place_1.gd" id="1_840j5"]
 [ext_resource type="PackedScene" uid="uid://dl13gwq18wsw7" path="res://scene/explode_area.tscn" id="1_bdb0y"]
 [ext_resource type="PackedScene" uid="uid://dv77holfwabvd" path="res://scene/check_area.tscn" id="2_840j5"]
 [ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://tres/bricks.tres" id="3_5iq60"]
 [ext_resource type="PackedScene" uid="uid://buxnl7k1t1loc" path="res://scene/bonfire.tscn" id="5_bdb0y"]
-[ext_resource type="Script" uid="uid://bfsmiyd1c1ry0" path="res://script/sucess_area_2d.gd" id="6_840j5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdb0y"]
 
 [node name="Place1" type="Node2D" node_paths=PackedStringArray("bonfire")]
 script = ExtResource("1_840j5")
@@ -122,14 +119,3 @@ tile_set = ExtResource("3_5iq60")
 position = Vector2(-121, -76)
 place = NodePath("..")
 file_path = "res://scene/place/place_1.tscn"
-
-[node name="SucessArea2D" type="Area2D" parent="."]
-visible = false
-position = Vector2(344.00003, -105)
-scale = Vector2(1.28, 17.52)
-script = ExtResource("6_840j5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SucessArea2D"]
-shape = SubResource("RectangleShape2D_bdb0y")
-
-[connection signal="body_entered" from="SucessArea2D" to="SucessArea2D" method="_on_body_entered"]

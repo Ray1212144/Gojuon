@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=4 uid="uid://dfqenkhjkk25o"]
+
+[ext_resource type="Script" uid="uid://borabyu7i5yrc" path="res://script/place.gd" id="1_wmwfm"]
+[ext_resource type="Script" uid="uid://bxco34swkj7bu" path="res://scene/dialogue_area_2d.gd" id="2_1ibm7"]
+[ext_resource type="PackedScene" uid="uid://buxnl7k1t1loc" path="res://scene/bonfire.tscn" id="3_di36a"]
+[ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://tres/bricks.tres" id="4_c52j3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wscrc"]
+size = Vector2(20, 192)
+
+[node name="Place3" type="Node2D" node_paths=PackedStringArray("bonfire")]
+script = ExtResource("1_wmwfm")
+bonfire = NodePath("Bonfire")
+
+[node name="DialogueArea" type="Area2D" parent="."]
+position = Vector2(529, 26)
+script = ExtResource("2_1ibm7")
+dialogue_name = "c1_l3"
+metadata/_custom_type_script = "uid://bxco34swkj7bu"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_wscrc")
+
+[node name="Bonfire" parent="." node_paths=PackedStringArray("place") instance=ExtResource("3_di36a")]
+position = Vector2(421, 33)
+place = NodePath("..")
+file_path = "res://scene/place/place_1.tscn"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(198, 36)
+tile_map_data = PackedByteArray("AAD///z/AAAAAAAAAgABAPz/AAAAAAAAAgD///7/AAAAAAAAAgABAP7/AAAAAAAAAgABAPr/AAAAAAAAAQD///r/AQAAAAAAAQADAPr/AQAAAAAAAQD9//r/AQAAAAAAAQD9//z/AAAAAAAAAQD///3/AAAAAAAAAQADAPz/AAAAAAAAAQAFAPz/AAAAAAAAAQAFAP7/AQAAAAAAAQAHAPz/AQAAAAAAAQAHAP7/AQAAAAAAAQADAP7/AAAAAAAAAQD9//7/AAAAAAAAAQD7//z/AAAAAAAAAQD7//7/AAAAAAAAAQD5//z/AQAAAAAAAQD5//7/AQAAAAAAAQADAAAAAAAAAAAAAQABAAAAAAAAAAAAAQD//wAAAQAAAAAAAQD9/wAAAQAAAAAAAQA=")
+tile_set = ExtResource("4_c52j3")
+
+[connection signal="body_entered" from="DialogueArea" to="DialogueArea" method="_on_body_entered"]

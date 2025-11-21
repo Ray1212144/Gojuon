@@ -1,0 +1,14 @@
+[signal arg="disable_player"]
+join あ安鯉 (担心) leftmost
+あ安鯉 (担心): やっぱり於松がいないとうまくいかない……
+leave あ安鯉
+join い以実 (-担心) leftmost
+い以実 (-担心): 「お」を使う言葉ができない……
+leave い以実
+join え衣羽 (得意) leftmost
+え衣羽 (得意): 於松ちゃんの力の重要さを改めて知らされたっすね
+leave え衣羽
+join う宇京 (普通) leftmost
+う宇京 (普通): 仮名文字。
+う宇京 (普通): 一つ欠けてもダメってことだ。
+[signal arg="enable_player"]

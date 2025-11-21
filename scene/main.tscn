@@ -1,16 +1,18 @@
-[gd_scene load_steps=17 format=4 uid="uid://o55eh0r742kd"]
+[gd_scene load_steps=19 format=4 uid="uid://o55eh0r742kd"]
 
 [ext_resource type="Script" uid="uid://bx04uuyksavrn" path="res://script/main.gd" id="1_4j5ol"]
 [ext_resource type="PackedScene" uid="uid://bt5rus4vk3pfx" path="res://scene/character/あ.tscn" id="2_0ha60"]
 [ext_resource type="PackedScene" uid="uid://tgmexrqfxrms" path="res://scene/place_postion.tscn" id="3_b5f6u"]
 [ext_resource type="Texture2D" uid="uid://6dop475lhpyr" path="res://asset/Sprite/鎻掑叆鍥剧墖.png" id="3_tqoya"]
 [ext_resource type="Script" uid="uid://duqs0nmqhqffv" path="res://scene/place_1.gd" id="4_b5f6u"]
-[ext_resource type="Script" uid="uid://borabyu7i5yrc" path="res://script/place.gd" id="4_tqoya"]
 [ext_resource type="PackedScene" uid="uid://dl13gwq18wsw7" path="res://scene/explode_area.tscn" id="5_k65ib"]
 [ext_resource type="PackedScene" uid="uid://dv77holfwabvd" path="res://scene/check_area.tscn" id="6_wscrc"]
 [ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://tres/bricks.tres" id="7_mswub"]
 [ext_resource type="PackedScene" uid="uid://buxnl7k1t1loc" path="res://scene/bonfire.tscn" id="8_hybxs"]
-[ext_resource type="PackedScene" uid="uid://d27i5nyljpbw3" path="res://scene/sucess_area_2d.tscn" id="10_k65ib"]
+[ext_resource type="PackedScene" uid="uid://kj3s2uo6dk28" path="res://scene/place/place_2.tscn" id="10_mswub"]
+[ext_resource type="PackedScene" uid="uid://dfqenkhjkk25o" path="res://scene/place/place_3.tscn" id="11_hybxs"]
+[ext_resource type="PackedScene" uid="uid://bj5srplq3yqlf" path="res://scene/place/place_4.tscn" id="12_v2gmf"]
+[ext_resource type="PackedScene" uid="uid://bdmpq2rbhaoa" path="res://scene/place/place_5.tscn" id="13_jcbur"]
 
 [sub_resource type="Animation" id="Animation_p1hux"]
 length = 0.001
@@ -130,10 +132,9 @@ texture = ExtResource("3_tqoya")
 
 [node name="PlacePostion1" parent="." instance=ExtResource("3_b5f6u")]
 
-[node name="Place1" type="Node2D" parent="PlacePostion1" node_paths=PackedStringArray("bonfire", "success_area")]
+[node name="Place1" type="Node2D" parent="PlacePostion1" node_paths=PackedStringArray("bonfire")]
 script = ExtResource("4_b5f6u")
 bonfire = NodePath("Bonfire")
-success_area = NodePath("SucessArea2D")
 
 [node name="Area" type="Node2D" parent="PlacePostion1/Place1"]
 
@@ -245,27 +246,25 @@ position = Vector2(-121, -76)
 place = NodePath("..")
 file_path = "res://scene/place/place_1.tscn"
 
-[node name="SucessArea2D" parent="PlacePostion1/Place1" instance=ExtResource("10_k65ib")]
-visible = true
-position = Vector2(382, -105.000015)
-
 [node name="PlacePostion2" parent="." instance=ExtResource("3_b5f6u")]
 position = Vector2(373, 354)
 
-[node name="Place2" type="Node2D" parent="PlacePostion2" node_paths=PackedStringArray("bonfire", "success_area")]
-script = ExtResource("4_tqoya")
-bonfire = NodePath("Bonfire")
-success_area = NodePath("SucessArea2D")
+[node name="Place2" parent="PlacePostion2" instance=ExtResource("10_mswub")]
 
-[node name="Bonfire" parent="PlacePostion2/Place2" node_paths=PackedStringArray("place") instance=ExtResource("8_hybxs")]
-position = Vector2(343, -189)
-place = NodePath("..")
-file_path = "res://scene/place/place_1.tscn"
+[node name="PlacePostion3" parent="." instance=ExtResource("3_b5f6u")]
+position = Vector2(-229, 342)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="PlacePostion2/Place2"]
-tile_map_data = PackedByteArray("AAAVAPv/AQAAAAAAAQATAPv/AAAAAAAAAQARAPv/AQAAAAAAAQAPAPv/AAAAAAAAAQANAPv/AAAAAAAAAQALAPv/AQAAAAAAAQAJAPv/AAAAAAAAAQAHAPv/AQAAAAAAAQATAP7/AAAAAAAAAQARAP7/AAAAAAAAAQAPAP7/AQAAAAAAAQANAP7/AQAAAAAAAQALAP7/AAAAAAAAAQAJAP7/AAAAAAAAAQAHAP7/AQAAAAAAAQAFAP7/AQAAAAAAAQARAAEAAQAAAAAAAQAPAAEAAAAAAAAAAQANAAEAAAAAAAAAAQALAAEAAAAAAAAAAQAJAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAFAAEAAAAAAAAAAQADAAEAAQAAAAAAAQAQAAQAAAAAAAAAAQAOAAQAAQAAAAAAAQAMAAQAAAAAAAAAAQAKAAQAAAAAAAAAAQAIAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQAEAAQAAQAAAAAAAQACAAQAAQAAAAAAAQA=")
-tile_set = ExtResource("7_mswub")
+[node name="Place3" parent="PlacePostion3" instance=ExtResource("11_hybxs")]
+position = Vector2(-550, 8)
 
-[node name="SucessArea2D" parent="PlacePostion2/Place2" instance=ExtResource("10_k65ib")]
-visible = true
-position = Vector2(-58, 14.000002)
+[node name="PlacePostion4" parent="." instance=ExtResource("3_b5f6u")]
+position = Vector2(-667, 73)
+
+[node name="Place4" parent="PlacePostion4" instance=ExtResource("12_v2gmf")]
+position = Vector2(-550, 8)
+
+[node name="PlacePostion5" parent="." instance=ExtResource("3_b5f6u")]
+position = Vector2(-671, -399)
+
+[node name="Place5" parent="PlacePostion5" instance=ExtResource("13_jcbur")]
+position = Vector2(-550, 8)
