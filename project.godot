@@ -31,9 +31,11 @@ directories/dch_directory={
 "う宇京": "res://asset/Sprite/う宇京.dch",
 "え衣羽": "res://asset/Portraits/う/え衣羽.dch",
 "お：於松": "res://asset/Portraits/え/お：於松.dch",
-"ゑ惠縁": "res://asset/Portraits/お/ゑ惠縁.dch"
+"ゑ惠縁": "res://asset/Portraits/お/ゑ惠縁.dch",
+"ゑ：惠縁": "res://dialogue/character/ゑ：惠縁.dch"
 }
 directories/dtl_directory={
+"c1_end": "res://dialogue/timeline/chapter_1/c1_end.dtl",
 "c1_l1": "res://dialogue/timeline/chapter_1/c1_l1.dtl",
 "c1_l3": "res://dialogue/timeline/chapter_1/c1_l3.dtl",
 "intro_1": "res://dialogue/timeline/chapter_1/intro_1.dtl"
