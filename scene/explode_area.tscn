@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://cpyfm6tsn51x3" path="res://script/explode_area.gd" id="1_7wo4p"]
 
 [node name="ExplodeArea" type="Area2D" groups=["ExplodeArea2D", "explode_area"]]
+z_index = 1000
 script = ExtResource("1_7wo4p")
-base_size = Vector2(24, 24)
+base_size = Vector2(22, 22)
 scale_x = 1
 scale_y = 1
 color = Color(0.5, 0.8, 1, 0.3)

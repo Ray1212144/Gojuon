@@ -4,7 +4,7 @@
 
 [node name="CheckArea" type="Area2D" groups=["CheckArea2D"]]
 script = ExtResource("1_f70e3")
-size = Vector2(25, 25)
+size = Vector2(20, 20)
 color = Color(1, 0.8, 0.5, 0.3)
 border_color = Color(1, 0.6, 0.2, 0.8)
 border_width = 2.0

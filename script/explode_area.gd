@@ -88,7 +88,7 @@ func _ready():
 	# 只在运行时创建碰撞形状
 	if not Engine.is_editor_hint():
 		_create_collision_shape()
-	
+		
 	# 确保在编辑器中正确显示
 	if Engine.is_editor_hint():
 		queue_redraw()
@@ -182,7 +182,7 @@ func _update_collision_shape():
 func _draw():
 	if not Engine.is_editor_hint():
 		return
-	
+	z_index = 1000
 	var actual_size = get_actual_size()
 	
 	# 绘制填充矩形
