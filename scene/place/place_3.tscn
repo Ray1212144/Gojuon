@@ -12,10 +12,11 @@ size = Vector2(20, 192)
 script = ExtResource("1_wmwfm")
 bonfire = NodePath("Bonfire")
 
-[node name="DialogueArea" type="Area2D" parent="."]
+[node name="DialogueArea" type="Area2D" parent="." node_paths=PackedStringArray("place")]
 position = Vector2(529, 26)
 script = ExtResource("2_1ibm7")
 dialogue_name = "c1_l3"
+place = NodePath("..")
 metadata/_custom_type_script = "uid://bxco34swkj7bu"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea"]
