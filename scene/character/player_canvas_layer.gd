@@ -47,7 +47,7 @@ func create_fog_overlay():
 	# 创建着色器材质
 	var material = ShaderMaterial.new()
 	
-	# 修复后的着色器代码 - 不再使用VIEWPORT_SIZE
+	# 修复后的着色器代码
 	var shader_code = """
 	shader_type canvas_item;
 
@@ -125,8 +125,8 @@ func update_visible_area():
 	calculate_wall_occlusion()
 
 func calculate_wall_occlusion():
-	# 获取物理空间状态
-	var space_state = get_world_2d().direct_space_state
+	# 修复：通过场景树获取物理空间状态
+	var space_state = get_tree().root.get_world_2d().direct_space_state
 	
 	# 创建可见区域的多边形顶点数组
 	var visible_polygon = PackedVector2Array()

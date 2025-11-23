@@ -1,15 +1,16 @@
-[gd_scene load_steps=4 format=4 uid="uid://bj5srplq3yqlf"]
+[gd_scene load_steps=5 format=4 uid="uid://bj5srplq3yqlf"]
 
 [ext_resource type="Script" uid="uid://borabyu7i5yrc" path="res://script/place.gd" id="1_6j6a1"]
 [ext_resource type="PackedScene" uid="uid://buxnl7k1t1loc" path="res://scene/bonfire.tscn" id="2_eh68i"]
 [ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://tres/bricks.tres" id="3_eh68i"]
+[ext_resource type="PackedScene" uid="uid://bh4urn3wymt1f" path="res://scene/wall_layer.tscn" id="4_yaxgn"]
 
 [node name="Place4" type="Node2D" node_paths=PackedStringArray("bonfire")]
 script = ExtResource("1_6j6a1")
 bonfire = NodePath("Bonfire")
 
 [node name="Bonfire" parent="." node_paths=PackedStringArray("place") instance=ExtResource("2_eh68i")]
-position = Vector2(421, 33)
+position = Vector2(439, -78)
 place = NodePath("..")
 file_path = "res://scene/place/place_1.tscn"
 
@@ -17,3 +18,6 @@ file_path = "res://scene/place/place_1.tscn"
 position = Vector2(422, -177)
 tile_map_data = PackedByteArray("AAD///f/AQAAAAAAAQABAPf/AQAAAAAAAQD///n/AAAAAAAAFQABAPn/AAAAAAAAFQD9//n/AQAAAAAAAQADAPn/AQAAAAAAAQD9//v/AAAAAAAAAwADAPv/AAAAAAAAAwAFAPv/AQAAAAAAAQD7//v/AAAAAAAAAwD9//3/AAAAAAAAAwADAP3/AAAAAAAAAwABAPv/AAAAAAAAAwABAP3/AAAAAAAAAwD///v/AQAAAAAAAQD///3/AQAAAAAAAQA=")
 tile_set = ExtResource("3_eh68i")
+
+[node name="WallLayer" parent="." instance=ExtResource("4_yaxgn")]
+tile_map_data = PackedByteArray("AAAWAPT/AAADAAIAAAAWAPX/AAADAAIAAAAWAPb/AAADAAIAAAAWAPf/AAADAAIAAAAWAPj/AAADAAIAAAAWAPn/AAADAAIAAAAWAPr/AAADAAIAAAAWAPv/AAADAAIAAAAWAPz/AAADAAIAAAAWAP3/AAADAAIAAAAWAP7/AAADAAIAAAAWAP//AAADAAIAAAAWAAAAAAADAAIAAAAWAAEAAAADAAIAAAAfAPT/AAADAAIAAAAfAPX/AAADAAIAAAAfAPb/AAADAAIAAAAfAPf/AAADAAIAAAAfAPj/AAADAAIAAAAfAPn/AAADAAIAAAAfAPr/AAADAAIAAAAfAPv/AAADAAIAAAAfAPz/AAADAAIAAAAfAP3/AAADAAIAAAAfAP7/AAADAAIAAAAfAP//AAADAAIAAAAfAAAAAAADAAIAAAAfAAEAAAADAAIAAAAgAPT/AAADAAIAAAAhAPT/AAADAAIAAAAhAPP/AAADAAIAAAAhAPL/AAADAAIAAAAhAPH/AAADAAIAAAAhAPD/AAADAAIAAAAhAO//AAADAAIAAAAhAO7/AAADAAIAAAAhAO3/AAADAAIAAAAhAOz/AAADAAIAAAAhAOv/AAADAAIAAAAhAOr/AAADAAIAAAAVAPT/AAADAAIAAAAUAPT/AAADAAIAAAAUAPP/AAADAAIAAAAUAPL/AAADAAIAAAAUAPH/AAADAAIAAAAUAPD/AAADAAIAAAAUAO//AAADAAIAAAAUAO7/AAADAAIAAAAUAO3/AAADAAIAAAAUAOz/AAADAAIAAAAUAOv/AAADAAIAAAAUAOr/AAADAAIAAAA=")

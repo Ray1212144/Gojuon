@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://dfqenkhjkk25o"]
+[gd_scene load_steps=9 format=4 uid="uid://dfqenkhjkk25o"]
 
 [ext_resource type="Script" uid="uid://borabyu7i5yrc" path="res://script/place.gd" id="1_wmwfm"]
 [ext_resource type="Script" uid="uid://bxco34swkj7bu" path="res://scene/dialogue_area_2d.gd" id="2_1ibm7"]
 [ext_resource type="PackedScene" uid="uid://buxnl7k1t1loc" path="res://scene/bonfire.tscn" id="3_di36a"]
 [ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://tres/bricks.tres" id="4_c52j3"]
+[ext_resource type="PackedScene" uid="uid://dv77holfwabvd" path="res://scene/check_area.tscn" id="5_1ibm7"]
+[ext_resource type="PackedScene" uid="uid://dl13gwq18wsw7" path="res://scene/explode_area.tscn" id="5_di36a"]
+[ext_resource type="PackedScene" uid="uid://bh4urn3wymt1f" path="res://scene/wall_layer.tscn" id="7_c52j3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wscrc"]
 size = Vector2(20, 192)
@@ -24,7 +27,7 @@ position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_wscrc")
 
 [node name="Bonfire" parent="." node_paths=PackedStringArray("place") instance=ExtResource("3_di36a")]
-position = Vector2(421, 33)
+position = Vector2(429, -2)
 place = NodePath("..")
 file_path = "res://scene/place/place_1.tscn"
 
@@ -32,5 +35,15 @@ file_path = "res://scene/place/place_1.tscn"
 position = Vector2(198, 36)
 tile_map_data = PackedByteArray("AAD///z/AAAAAAAACQD9//r/AQAAAAAAAQD9//z/AAAAAAAAAgADAPz/AAAAAAAACQAFAPz/AAAAAAAACQAHAPz/AQAAAAAAAQAHAP7/AQAAAAAAAQD9//7/AAAAAAAACQD7//7/AAAAAAAACQD5//z/AQAAAAAAAQD5//7/AQAAAAAAAQD///r/AQAAAAAAAQADAPr/AQAAAAAAAQABAPr/AAAAAAAAAQD7//z/AAAAAAAAAgD9/wAAAQAAAAAAAQABAPz/AAAAAAAAAQD///7/AAAAAAAAAQABAP7/AAAAAAAAAQADAP7/AAAAAAAAAQAFAP7/AQAAAAAAAQD//wAAAQAAAAAAAQABAAAAAAAAAAAAAQADAAAAAAAAAAAAAQA=")
 tile_set = ExtResource("4_c52j3")
+
+[node name="Area" type="Node2D" parent="."]
+
+[node name="ExplodeArea" parent="Area" instance=ExtResource("5_di36a")]
+visible = false
+
+[node name="CheckArea" parent="Area/ExplodeArea" instance=ExtResource("5_1ibm7")]
+
+[node name="WallLayer" parent="." instance=ExtResource("7_c52j3")]
+tile_map_data = PackedByteArray("AAACAPr/AAADAAIAAAADAPr/AAADAAIAAAAEAPr/AAADAAIAAAAFAPr/AAADAAIAAAAGAPr/AAADAAIAAAAHAPr/AAADAAIAAAAIAPr/AAADAAIAAAAJAPr/AAADAAIAAAAKAPr/AAADAAIAAAALAPr/AAADAAIAAAAMAPr/AAADAAIAAAANAPr/AAADAAIAAAAOAPr/AAADAAIAAAAPAPr/AAADAAIAAAAQAPr/AAADAAIAAAARAPr/AAADAAIAAAASAPr/AAADAAIAAAATAPr/AAADAAIAAAAUAPr/AAADAAIAAAAVAPr/AAADAAIAAAAWAPr/AAADAAIAAAAXAPr/AAADAAIAAAAYAPr/AAADAAIAAAAZAPr/AAADAAIAAAAaAPr/AAADAAIAAAAbAPr/AAADAAIAAAAcAPr/AAADAAIAAAAdAPr/AAADAAIAAAAeAPr/AAADAAIAAAAfAPr/AAADAAIAAAAgAPr/AAADAAIAAAAhAPr/AAADAAIAAAABAAQAAAADAAIAAAACAAQAAAADAAIAAAADAAQAAAADAAIAAAAEAAQAAAADAAIAAAAFAAQAAAADAAIAAAAGAAQAAAADAAIAAAAHAAQAAAADAAIAAAAIAAQAAAADAAIAAAAJAAQAAAADAAIAAAAKAAQAAAADAAIAAAALAAQAAAADAAIAAAAMAAQAAAADAAIAAAANAAQAAAADAAIAAAAOAAQAAAADAAIAAAAPAAQAAAADAAIAAAAQAAQAAAADAAIAAAARAAQAAAADAAIAAAASAAQAAAADAAIAAAATAAQAAAADAAIAAAAUAAQAAAADAAIAAAAVAAQAAAADAAIAAAAWAAQAAAADAAIAAAAXAAQAAAADAAIAAAAYAAQAAAADAAIAAAAZAAQAAAADAAIAAAAaAAQAAAADAAIAAAAbAAQAAAADAAIAAAAcAAQAAAADAAIAAAAdAAQAAAADAAIAAAAeAAQAAAADAAIAAAAfAAQAAAADAAIAAAAgAAQAAAADAAIAAAAhAAQAAAADAAIAAAA=")
 
 [connection signal="body_entered" from="DialogueArea" to="DialogueArea" method="_on_body_entered"]

@@ -6,7 +6,7 @@ var speed :float
 @export var animation_player: AnimationPlayer
 @export var bonfire : Bonfire
 @export var default_speed : float = 600
-
+@onready var camera = $Camera2D 
 
 # 动画名称常量
 const ANIM_WALK_DOWN = "walk_down"
@@ -37,7 +37,9 @@ func _physics_process(delta: float) -> void:
 		velocity = input_direction.normalized() * speed
 	else:
 		velocity = Vector2.ZERO  # 停止移动
-	
+	# 更新相机中的战争迷雾
+	if camera and camera.has_method("update_player_position"):
+		camera.update_player_position(global_position)
 	# 应用移动
 	move_and_slide()
 	

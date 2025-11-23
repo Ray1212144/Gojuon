@@ -1,4 +1,4 @@
-
+class_name WallLayer
 extends TileMapLayer
 
 # 视野系统信号
