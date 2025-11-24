@@ -34,7 +34,7 @@ const ROMAJI_MAP = [
 var _kana_selection: int = 0
 var is_hovered = false
 var is_pressed = false
-var ban_kana : int = 4
+@export var ban_kana : int = 4
 
 # 信号定义
 signal pressed
@@ -88,7 +88,7 @@ func get_romaji() -> String:
 
 # 输入事件处理
 func _on_input_event(viewport, event, shape_idx):
-	if ban_kana == 4:
+	if _kana_selection == ban_kana:
 		return
 	
 	if event is InputEventMouseButton:
