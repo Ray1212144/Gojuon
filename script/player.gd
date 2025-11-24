@@ -10,9 +10,12 @@ var speed :float
 
 # 灯光相关属性
 @export var light_radius: float = 200.0  # 灯光半径
+<<<<<<< Updated upstream
 @export var light_area: Area2D  # 引用Area2D节点
 
 # 可见性系统相关
+=======
+>>>>>>> Stashed changes
 @export var _main_node: Main  # 引用Main节点
 
 # 动画名称常量
@@ -31,6 +34,7 @@ var last_direction = Vector2.DOWN
 
 func _ready() -> void:
 	speed = default_speed
+<<<<<<< Updated upstream
 	# 设置灯光Area2D的形状大小
 	if light_area:
 		# 假设light_area下有一个CollisionShape2D，形状是CircleShape2D
@@ -48,6 +52,11 @@ func _on_light_body_entered(body: Node2D):
 
 func _on_light_body_exited(body: Node2D):
 	print("物体离开灯光范围: ", body)
+=======
+	print("玩家速度: ", speed)
+	print("灯光半径: ", light_radius)
+	print("主节点引用: ", _main_node != null)
+>>>>>>> Stashed changes
 
 func _physics_process(delta: float) -> void:
 	# 获取输入方向
@@ -65,6 +74,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO  # 停止移动
 	
+<<<<<<< Updated upstream
 	# 更新可见性系统 - 使用圆形视野
 	if _main_node and _main_node.has_method("update_player_vision"):
 		_main_node.update_player_vision(global_position, light_radius)
@@ -73,6 +83,12 @@ func _physics_process(delta: float) -> void:
 	if camera and camera.has_method("update_player_position"):
 		camera.update_player_position(global_position)
 	
+=======
+	# 更新可见性系统
+	if _main_node and _main_node.has_method("update_player_vision"):
+		_main_node.update_player_vision(global_position, light_radius)
+	
+>>>>>>> Stashed changes
 	# 应用移动
 	move_and_slide()
 	

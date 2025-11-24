@@ -1,9 +1,16 @@
 [gd_scene load_steps=6 format=4 uid="uid://bj5srplq3yqlf"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://f7ddi38248dc" path="res://script/place.gd" id="1_6j6a1"]
 [ext_resource type="PackedScene" path="res://scene/bonfire.tscn" id="2_eh68i"]
 [ext_resource type="TileSet" path="res://tres/bricks.tres" id="3_eh68i"]
 [ext_resource type="Script" uid="uid://dksavx3hjn2iy" path="res://scene/module_layer.gd" id="4_2qo1t"]
+=======
+[ext_resource type="Script" uid="uid://borabyu7i5yrc" path="res://script/place.gd" id="1_6j6a1"]
+[ext_resource type="PackedScene" uid="uid://buxnl7k1t1loc" path="res://scene/bonfire.tscn" id="2_eh68i"]
+[ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://tres/bricks.tres" id="3_eh68i"]
+[ext_resource type="Script" uid="uid://cwwls0qo7ub5s" path="res://scene/module_layer.gd" id="4_2qo1t"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bh4urn3wymt1f" path="res://scene/wall_layer.tscn" id="4_yaxgn"]
 
 [node name="Place5" type="Node2D" node_paths=PackedStringArray("bonfire")]

@@ -1,9 +1,16 @@
 [gd_scene load_steps=6 format=4 uid="uid://kj3s2uo6dk28"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://f7ddi38248dc" path="res://script/place.gd" id="1_vx7jb"]
 [ext_resource type="PackedScene" path="res://scene/bonfire.tscn" id="2_wtngc"]
 [ext_resource type="TileSet" path="res://tres/bricks.tres" id="3_hpdif"]
 [ext_resource type="Script" uid="uid://dksavx3hjn2iy" path="res://scene/module_layer.gd" id="4_wtngc"]
+=======
+[ext_resource type="Script" uid="uid://borabyu7i5yrc" path="res://script/place.gd" id="1_vx7jb"]
+[ext_resource type="PackedScene" uid="uid://buxnl7k1t1loc" path="res://scene/bonfire.tscn" id="2_wtngc"]
+[ext_resource type="TileSet" uid="uid://cj1vvag8n1wbe" path="res://tres/bricks.tres" id="3_hpdif"]
+[ext_resource type="Script" uid="uid://cwwls0qo7ub5s" path="res://scene/module_layer.gd" id="4_wtngc"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bh4urn3wymt1f" path="res://scene/wall_layer.tscn" id="5_wtngc"]
 
 [node name="Place5" type="Node2D" node_paths=PackedStringArray("bonfire")]
@@ -17,7 +24,11 @@ place = NodePath("..")
 file_path = "res://scene/place/place_1.tscn"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." groups=["visible_layers"]]
+<<<<<<< Updated upstream
 position = Vector2(422, -177)
+=======
+tile_map_data = PackedByteArray("AAAVAPv/AQAAAAAAAQATAPv/AAAAAAAAAQARAPv/AQAAAAAAAQAPAPv/AAAAAAAAAQANAPv/AAAAAAAAAQALAPv/AQAAAAAAAQAJAPv/AAAAAAAAAQAHAPv/AQAAAAAAAQATAP3/AAAAAAAAAQARAP3/AAAAAAAAAQALAP3/AAAAAAAAAQAJAP3/AAAAAAAAAwAPAP3/AQAAAAAAAQANAP3/AQAAAAAAAQAHAP3/AQAAAAAAAQAFAP3/AQAAAAAAAQARAP//AQAAAAAAAQADAP//AQAAAAAAAQAFAP//AAAAAAAAAQAHAP//AAAAAAAAAQAJAP//AAAAAAAAAwALAP//AAAAAAAAAQANAP//AAAAAAAAAQAPAP//AAAAAAAAAQAPAAEAAAAAAAAAAQALAAEAAAAAAAAAAQAJAAEAAAAAAAAAAwAHAAEAAAAAAAAAAQAFAAEAAAAAAAAAAQANAAEAAQAAAAAAAQADAAEAAQAAAAAAAQABAAEAAQAAAAAAAQA=")
+>>>>>>> Stashed changes
 tile_set = ExtResource("3_hpdif")
 script = ExtResource("4_wtngc")
 

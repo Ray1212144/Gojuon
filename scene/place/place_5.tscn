@@ -4,7 +4,11 @@
 [ext_resource type="PackedScene" path="res://scene/bonfire.tscn" id="2_nw68p"]
 [ext_resource type="TileSet" path="res://tres/bricks.tres" id="3_o6gdv"]
 [ext_resource type="PackedScene" uid="uid://bh4urn3wymt1f" path="res://scene/wall_layer.tscn" id="4_nw68p"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://dksavx3hjn2iy" path="res://scene/module_layer.gd" id="4_o6gdv"]
+=======
+[ext_resource type="Script" uid="uid://cwwls0qo7ub5s" path="res://scene/module_layer.gd" id="4_o6gdv"]
+>>>>>>> Stashed changes
 
 [node name="Place5" type="Node2D" node_paths=PackedStringArray("bonfire")]
 script = ExtResource("1_0a6ge")

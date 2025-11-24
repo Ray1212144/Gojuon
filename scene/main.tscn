@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=6 format=4 uid="uid://o55eh0r742kd"]
 
 [ext_resource type="Script" uid="uid://f7ddi38248dc" path="res://script/place.gd" id="1_0ha60"]
@@ -10,6 +11,203 @@
 script = ExtResource("1_0ha60")
 bonfire = NodePath("Bonfire")
 have_intro = null
+=======
+[gd_scene load_steps=30 format=3 uid="uid://o55eh0r742kd"]
+
+[ext_resource type="Script" uid="uid://bx04uuyksavrn" path="res://script/main.gd" id="1_4j5ol"]
+[ext_resource type="Script" uid="uid://bmiy26g2nt7e" path="res://script/player.gd" id="2_wscrc"]
+[ext_resource type="PackedScene" uid="uid://tgmexrqfxrms" path="res://scene/place_postion.tscn" id="3_b5f6u"]
+[ext_resource type="Script" uid="uid://b76a23sqken00" path="res://script/inventory.gd" id="3_mswub"]
+[ext_resource type="Texture2D" uid="uid://6dop475lhpyr" path="res://asset/Sprite/鎻掑叆鍥剧墖.png" id="3_tqoya"]
+[ext_resource type="PackedScene" uid="uid://ba3d6tlu7xloy" path="res://scene/fire_key.tscn" id="4_hybxs"]
+[ext_resource type="PackedScene" uid="uid://blpr2gos1kxo6" path="res://scene/place/place_1.tscn" id="5_b5f6u"]
+[ext_resource type="Texture2D" uid="uid://bifkvmybarb2e" path="res://asset/Sprite/行走图.png" id="5_v2gmf"]
+[ext_resource type="PackedScene" uid="uid://kj3s2uo6dk28" path="res://scene/place/place_2.tscn" id="10_mswub"]
+[ext_resource type="PackedScene" uid="uid://dfqenkhjkk25o" path="res://scene/place/place_3.tscn" id="11_hybxs"]
+[ext_resource type="PackedScene" uid="uid://bj5srplq3yqlf" path="res://scene/place/place_4.tscn" id="12_v2gmf"]
+[ext_resource type="PackedScene" uid="uid://bdmpq2rbhaoa" path="res://scene/place/place_5.tscn" id="13_jcbur"]
+
+[sub_resource type="Animation" id="Animation_d5bk8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_m2b5q"]
+resource_name = "idle_down"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_v8xw1"]
+resource_name = "idle_left"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_m808e"]
+resource_name = "idle_right"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_6fjc8"]
+resource_name = "idle_up"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_o64s4"]
+resource_name = "walk_down"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_uovpx"]
+resource_name = "walk_left"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_j43e3"]
+resource_name = "walk_right"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_debs3"]
+resource_name = "walk_up"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_debs3"]
+_data = {
+&"RESET": SubResource("Animation_d5bk8"),
+&"idle_down": SubResource("Animation_m2b5q"),
+&"idle_left": SubResource("Animation_v8xw1"),
+&"idle_right": SubResource("Animation_m808e"),
+&"idle_up": SubResource("Animation_6fjc8"),
+&"walk_down": SubResource("Animation_o64s4"),
+&"walk_left": SubResource("Animation_uovpx"),
+&"walk_right": SubResource("Animation_j43e3"),
+&"walk_up": SubResource("Animation_debs3")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uovpx"]
+height = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5utgv"]
+
+[sub_resource type="Animation" id="Animation_p1hux"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+>>>>>>> Stashed changes
 
 [node name="Bonfire" parent="." node_paths=PackedStringArray("place") instance=ExtResource("2_4j5ol")]
 position = Vector2(421, 33)
@@ -21,5 +219,203 @@ position = Vector2(422, -177)
 tile_set = ExtResource("3_p1hux")
 script = ExtResource("4_of57s")
 
+<<<<<<< Updated upstream
 [node name="WallLayer" parent="." instance=ExtResource("5_b5f6u")]
 tile_map_data = PackedByteArray("AAAVAAkAAAADAAIAAAAVAAgAAAADAAIAAAAVAAcAAAADAAIAAAAVAAYAAAADAAIAAAAVAAUAAAADAAIAAAAVAAQAAAADAAIAAAAVAAMAAAADAAIAAAAVAAIAAAADAAIAAAAVAAEAAAADAAIAAAAVAAAAAAADAAIAAAAVAP//AAADAAIAAAAVAP7/AAADAAIAAAAVAP3/AAADAAIAAAAVAPz/AAADAAIAAAAVAPv/AAADAAIAAAAVAPr/AAADAAIAAAAVAPn/AAADAAIAAAAVAPj/AAADAAIAAAAVAPf/AAADAAIAAAAVAPb/AAADAAIAAAAeAAkAAAADAAIAAAAeAAgAAAADAAIAAAAeAAcAAAADAAIAAAAeAAYAAAADAAIAAAAeAAUAAAADAAIAAAAeAAQAAAADAAIAAAAeAAMAAAADAAIAAAAeAAIAAAADAAIAAAAeAAEAAAADAAIAAAAeAAAAAAADAAIAAAAeAP//AAADAAIAAAAeAP7/AAADAAIAAAAeAP3/AAADAAIAAAAeAPz/AAADAAIAAAAeAPv/AAADAAIAAAAeAPr/AAADAAIAAAAeAPn/AAADAAIAAAAeAPj/AAADAAIAAAAeAPf/AAADAAIAAAAeAPb/AAADAAIAAAAUAPb/AAADAAIAAAATAPb/AAADAAIAAAASAPb/AAADAAIAAAARAPb/AAADAAIAAAAQAPb/AAADAAIAAAAPAPb/AAADAAIAAAAOAPb/AAADAAIAAAANAPb/AAADAAIAAAAMAPb/AAADAAIAAAALAPb/AAADAAIAAAAKAPb/AAADAAIAAAAJAPb/AAADAAIAAAAIAPb/AAADAAIAAAAIAPX/AAADAAIAAAAIAPT/AAADAAIAAAAIAPP/AAADAAIAAAAIAPL/AAADAAIAAAAIAPH/AAADAAIAAAAIAPD/AAADAAIAAAAIAO//AAADAAIAAAAIAO7/AAADAAIAAAAIAO3/AAADAAIAAAAIAOz/AAADAAIAAAAIAOv/AAADAAIAAAAIAOr/AAADAAIAAAAIAOn/AAADAAIAAAAIAOj/AAADAAIAAAAIAOf/AAADAAIAAAAIAOb/AAADAAIAAAAIAOX/AAADAAIAAAAIAOT/AAADAAIAAAAIAOP/AAADAAIAAAAIAOL/AAADAAIAAAAIAOH/AAADAAIAAAAIAOD/AAADAAIAAAAJAOD/AAADAAIAAAAKAOD/AAADAAIAAAALAOD/AAADAAIAAAAMAOD/AAADAAIAAAANAOD/AAADAAIAAAAOAOD/AAADAAIAAAAPAOD/AAADAAIAAAAQAOD/AAADAAIAAAARAOD/AAADAAIAAAASAOD/AAADAAIAAAATAOD/AAADAAIAAAAUAOD/AAADAAIAAAAVAOD/AAADAAIAAAAWAOD/AAADAAIAAAAXAOD/AAADAAIAAAAYAOD/AAADAAIAAAAZAOD/AAADAAIAAAAaAOD/AAADAAIAAAAbAOD/AAADAAIAAAAcAOD/AAADAAIAAAAdAOD/AAADAAIAAAAeAOD/AAADAAIAAAAfAOD/AAADAAIAAAAgAOD/AAADAAIAAAAhAOD/AAADAAIAAAAiAOD/AAADAAIAAAAjAOD/AAADAAIAAAAkAOD/AAADAAIAAAAlAOD/AAADAAIAAAAmAOD/AAADAAIAAAAnAOD/AAADAAIAAAAoAOD/AAADAAIAAAApAOD/AAADAAIAAAAqAOD/AAADAAIAAAArAOD/AAADAAIAAAArAOH/AAADAAIAAAArAOL/AAADAAIAAAArAOP/AAADAAIAAAArAOT/AAADAAIAAAArAOX/AAADAAIAAAArAOb/AAADAAIAAAArAOf/AAADAAIAAAArAOj/AAADAAIAAAArAOn/AAADAAIAAAArAOr/AAADAAIAAAArAOv/AAADAAIAAAArAOz/AAADAAIAAAArAO3/AAADAAIAAAArAO7/AAADAAIAAAArAO//AAADAAIAAAArAPD/AAADAAIAAAArAPH/AAADAAIAAAArAPL/AAADAAIAAAArAPP/AAADAAIAAAArAPT/AAADAAIAAAArAPX/AAADAAIAAAArAPb/AAADAAIAAAAfAPb/AAADAAIAAAAgAPb/AAADAAIAAAAhAPb/AAADAAIAAAAiAPb/AAADAAIAAAAjAPb/AAADAAIAAAAkAPb/AAADAAIAAAAlAPb/AAADAAIAAAAmAPb/AAADAAIAAAAnAPb/AAADAAIAAAAoAPb/AAADAAIAAAApAPb/AAADAAIAAAAqAPb/AAADAAIAAAA=")
+=======
+[sub_resource type="Animation" id="Animation_0ha60"]
+resource_name = "blackscreen_outro"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p1hux"]
+_data = {
+&"RESET": SubResource("Animation_p1hux"),
+&"black_out": SubResource("Animation_4j5ol"),
+&"blackscreen_intro": SubResource("Animation_brvut"),
+&"blackscreen_outro": SubResource("Animation_0ha60")
+}
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("canvas_animation_player", "player")]
+script = ExtResource("1_4j5ol")
+canvas_animation_player = NodePath("CanvasLayer/CanvasAnimationPlayer")
+player = NodePath("あ")
+
+[node name="あ" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animation_player", "_main_node") groups=["player"]]
+position = Vector2(-16, -177)
+script = ExtResource("2_wscrc")
+animation_player = NodePath("AnimationPlayer")
+_main_node = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="あ"]
+zoom = Vector2(2, 2)
+process_callback = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="あ"]
+
+[node name="Inventory" type="Control" parent="あ/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3_mswub")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="あ/CanvasLayer/Inventory"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="あ/CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="FireKey" parent="あ/CanvasLayer/Inventory/HBoxContainer/PanelContainer" node_paths=PackedStringArray("player") instance=ExtResource("4_hybxs")]
+layout_mode = 2
+player = NodePath("../../../../..")
+
+[node name="PanelContainer2" type="PanelContainer" parent="あ/CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="あ/CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="あ/CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer5" type="PanelContainer" parent="あ/CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer6" type="PanelContainer" parent="あ/CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer7" type="PanelContainer" parent="あ/CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer8" type="PanelContainer" parent="あ/CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer9" type="PanelContainer" parent="あ/CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer10" type="PanelContainer" parent="あ/CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer11" type="PanelContainer" parent="あ/CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="あ"]
+libraries = {
+&"": SubResource("AnimationLibrary_debs3")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="あ"]
+texture_filter = 1
+texture = ExtResource("5_v2gmf")
+hframes = 3
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="あ"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_uovpx")
+
+[node name="Area2D" type="Area2D" parent="あ"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="あ/Area2D"]
+shape = SubResource("CircleShape2D_5utgv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 999
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="CanvasAnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_p1hux")
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_tqoya")
+
+[node name="PlacePostion1" parent="." instance=ExtResource("3_b5f6u")]
+
+[node name="Place1" parent="PlacePostion1" instance=ExtResource("5_b5f6u")]
+
+[node name="PlacePostion2" parent="." instance=ExtResource("3_b5f6u")]
+position = Vector2(143, 269)
+
+[node name="Place2" parent="PlacePostion2" instance=ExtResource("10_mswub")]
+
+[node name="PlacePostion3" parent="." instance=ExtResource("3_b5f6u")]
+position = Vector2(104, 245)
+
+[node name="Place3" parent="PlacePostion3" instance=ExtResource("11_hybxs")]
+position = Vector2(-550, 8)
+
+[node name="PlacePostion4" parent="." instance=ExtResource("3_b5f6u")]
+position = Vector2(-375, 134)
+
+[node name="Place4" parent="PlacePostion4" instance=ExtResource("12_v2gmf")]
+position = Vector2(-550, 8)
+
+[node name="PlacePostion5" parent="." instance=ExtResource("3_b5f6u")]
+position = Vector2(-359, -383)
+
+[node name="Place5" parent="PlacePostion5" instance=ExtResource("13_jcbur")]
+position = Vector2(-550, 8)
+>>>>>>> Stashed changes

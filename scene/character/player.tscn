@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=6 format=4 uid="uid://dxhfeuecjtu80"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://dxhfeuecjtu80"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://f7ddi38248dc" path="res://script/place.gd" id="1_rrjs7"]
 [ext_resource type="PackedScene" path="res://scene/bonfire.tscn" id="2_1t3kv"]
@@ -6,10 +10,18 @@
 [ext_resource type="Script" uid="uid://dksavx3hjn2iy" path="res://scene/module_layer.gd" id="4_oig6r"]
 [ext_resource type="PackedScene" uid="uid://bh4urn3wymt1f" path="res://scene/wall_layer.tscn" id="5_d4d1h"]
 
+<<<<<<< Updated upstream
 [node name="Place5" type="Node2D" node_paths=PackedStringArray("bonfire")]
 script = ExtResource("1_rrjs7")
 bonfire = NodePath("Bonfire")
 have_intro = null
+=======
+[sub_resource type="CircleShape2D" id="CircleShape2D_5utgv"]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("light_area") groups=["player"]]
+script = ExtResource("1_hjaqi")
+light_area = NodePath("Area2D")
+>>>>>>> Stashed changes
 
 [node name="Bonfire" parent="." node_paths=PackedStringArray("place") instance=ExtResource("2_1t3kv")]
 position = Vector2(421, 33)
@@ -21,5 +33,85 @@ position = Vector2(422, -177)
 tile_set = ExtResource("3_5srte")
 script = ExtResource("4_oig6r")
 
+<<<<<<< Updated upstream
 [node name="WallLayer" parent="." instance=ExtResource("5_d4d1h")]
 tile_map_data = PackedByteArray("AAAVAAkAAAADAAIAAAAVAAgAAAADAAIAAAAVAAcAAAADAAIAAAAVAAYAAAADAAIAAAAVAAUAAAADAAIAAAAVAAQAAAADAAIAAAAVAAMAAAADAAIAAAAVAAIAAAADAAIAAAAVAAEAAAADAAIAAAAVAAAAAAADAAIAAAAVAP//AAADAAIAAAAVAP7/AAADAAIAAAAVAP3/AAADAAIAAAAVAPz/AAADAAIAAAAVAPv/AAADAAIAAAAVAPr/AAADAAIAAAAVAPn/AAADAAIAAAAVAPj/AAADAAIAAAAVAPf/AAADAAIAAAAVAPb/AAADAAIAAAAeAAkAAAADAAIAAAAeAAgAAAADAAIAAAAeAAcAAAADAAIAAAAeAAYAAAADAAIAAAAeAAUAAAADAAIAAAAeAAQAAAADAAIAAAAeAAMAAAADAAIAAAAeAAIAAAADAAIAAAAeAAEAAAADAAIAAAAeAAAAAAADAAIAAAAeAP//AAADAAIAAAAeAP7/AAADAAIAAAAeAP3/AAADAAIAAAAeAPz/AAADAAIAAAAeAPv/AAADAAIAAAAeAPr/AAADAAIAAAAeAPn/AAADAAIAAAAeAPj/AAADAAIAAAAeAPf/AAADAAIAAAAeAPb/AAADAAIAAAAUAPb/AAADAAIAAAATAPb/AAADAAIAAAASAPb/AAADAAIAAAARAPb/AAADAAIAAAAQAPb/AAADAAIAAAAPAPb/AAADAAIAAAAOAPb/AAADAAIAAAANAPb/AAADAAIAAAAMAPb/AAADAAIAAAALAPb/AAADAAIAAAAKAPb/AAADAAIAAAAJAPb/AAADAAIAAAAIAPb/AAADAAIAAAAIAPX/AAADAAIAAAAIAPT/AAADAAIAAAAIAPP/AAADAAIAAAAIAPL/AAADAAIAAAAIAPH/AAADAAIAAAAIAPD/AAADAAIAAAAIAO//AAADAAIAAAAIAO7/AAADAAIAAAAIAO3/AAADAAIAAAAIAOz/AAADAAIAAAAIAOv/AAADAAIAAAAIAOr/AAADAAIAAAAIAOn/AAADAAIAAAAIAOj/AAADAAIAAAAIAOf/AAADAAIAAAAIAOb/AAADAAIAAAAIAOX/AAADAAIAAAAIAOT/AAADAAIAAAAIAOP/AAADAAIAAAAIAOL/AAADAAIAAAAIAOH/AAADAAIAAAAIAOD/AAADAAIAAAAJAOD/AAADAAIAAAAKAOD/AAADAAIAAAALAOD/AAADAAIAAAAMAOD/AAADAAIAAAANAOD/AAADAAIAAAAOAOD/AAADAAIAAAAPAOD/AAADAAIAAAAQAOD/AAADAAIAAAARAOD/AAADAAIAAAASAOD/AAADAAIAAAATAOD/AAADAAIAAAAUAOD/AAADAAIAAAAVAOD/AAADAAIAAAAWAOD/AAADAAIAAAAXAOD/AAADAAIAAAAYAOD/AAADAAIAAAAZAOD/AAADAAIAAAAaAOD/AAADAAIAAAAbAOD/AAADAAIAAAAcAOD/AAADAAIAAAAdAOD/AAADAAIAAAAeAOD/AAADAAIAAAAfAOD/AAADAAIAAAAgAOD/AAADAAIAAAAhAOD/AAADAAIAAAAiAOD/AAADAAIAAAAjAOD/AAADAAIAAAAkAOD/AAADAAIAAAAlAOD/AAADAAIAAAAmAOD/AAADAAIAAAAnAOD/AAADAAIAAAAoAOD/AAADAAIAAAApAOD/AAADAAIAAAAqAOD/AAADAAIAAAArAOD/AAADAAIAAAArAOH/AAADAAIAAAArAOL/AAADAAIAAAArAOP/AAADAAIAAAArAOT/AAADAAIAAAArAOX/AAADAAIAAAArAOb/AAADAAIAAAArAOf/AAADAAIAAAArAOj/AAADAAIAAAArAOn/AAADAAIAAAArAOr/AAADAAIAAAArAOv/AAADAAIAAAArAOz/AAADAAIAAAArAO3/AAADAAIAAAArAO7/AAADAAIAAAArAO//AAADAAIAAAArAPD/AAADAAIAAAArAPH/AAADAAIAAAArAPL/AAADAAIAAAArAPP/AAADAAIAAAArAPT/AAADAAIAAAArAPX/AAADAAIAAAArAPb/AAADAAIAAAAfAPb/AAADAAIAAAAgAPb/AAADAAIAAAAhAPb/AAADAAIAAAAiAPb/AAADAAIAAAAjAPb/AAADAAIAAAAkAPb/AAADAAIAAAAlAPb/AAADAAIAAAAmAPb/AAADAAIAAAAnAPb/AAADAAIAAAAoAPb/AAADAAIAAAApAPb/AAADAAIAAAAqAPb/AAADAAIAAAA=")
+=======
+[node name="Inventory" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_hovdd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Inventory"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="FireKey" parent="CanvasLayer/Inventory/HBoxContainer/PanelContainer" node_paths=PackedStringArray("player") instance=ExtResource("3_5utgv")]
+layout_mode = 2
+player = NodePath("../../../../..")
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer5" type="PanelContainer" parent="CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer6" type="PanelContainer" parent="CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer7" type="PanelContainer" parent="CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer8" type="PanelContainer" parent="CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer9" type="PanelContainer" parent="CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer10" type="PanelContainer" parent="CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PanelContainer11" type="PanelContainer" parent="CanvasLayer/Inventory/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(35.8962, 32.618412)
+shape = SubResource("CircleShape2D_5utgv")
+>>>>>>> Stashed changes

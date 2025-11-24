@@ -5,6 +5,7 @@ class_name Main
 @export var player: Player
 @export var intro : bool
 
+<<<<<<< Updated upstream
 # 可见性系统相关变量
 @export var _bg_color: Color
 
@@ -15,6 +16,15 @@ class_name Main
 var _visible_layers: Array[ModulateTileLayer] = []   # 碰撞mask为1的可见图层
 var _not_visible_layers: Array[TileMapLayer] = []   # 碰撞mask为2的不可见图层
 var visible_tiles: Dictionary[Vector2i, bool] = {}
+=======
+# 瓦片地图相关
+@export var tile_map: TileMap  # 直接引用一个瓦片地图
+@export var _bg_color: Color
+
+# 可见性系统
+var visible_tiles: Dictionary[Vector2i, bool] = {}
+var fade_speed: float = 4.0
+>>>>>>> Stashed changes
 
 # 硬编码的资源路径列表
 var style_paths = [
@@ -24,8 +34,13 @@ var style_paths = [
 ]
 
 func _ready() -> void:
+<<<<<<< Updated upstream
 	# 通过分组获取图层
 	_get_layers_from_groups()
+=======
+	print("=== Main._ready() 开始 ===")
+	
+>>>>>>> Stashed changes
 	# 初始化可见性系统
 	_init_visibility_system()
 	
@@ -36,6 +51,75 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_text_signal)
 	if intro:
 		Dialogic.start("intro_1")
+	
+	print("=== Main._ready() 完成 ===")
+
+func _init_visibility_system():
+	# 设置背景颜色
+	RenderingServer.set_default_clear_color(_bg_color)
+	print("设置背景颜色: ", _bg_color)
+	
+	# 初始隐藏所有瓦片
+	if tile_map:
+		# 获取所有有瓦片的单元格
+		var used_cells = tile_map.get_used_cells(0)  # 假设使用第0层
+		for cell in used_cells:
+			# 设置瓦片为完全透明
+			var tile_data = tile_map.get_cell_tile_data(0, cell)
+			if tile_data:
+				tile_data.modulate.a = 0
+		print("初始化隐藏了 ", used_cells.size(), " 个瓦片")
+
+func _process(delta: float) -> void:
+	# 更新瓦片的淡出效果
+	_update_tile_fade(delta)
+
+func _update_tile_fade(delta: float):
+	if not tile_map:
+		return
+	
+	# 获取所有有瓦片的单元格
+	var used_cells = tile_map.get_used_cells(0)
+	
+	for cell in used_cells:
+		var tile_data = tile_map.get_cell_tile_data(0, cell)
+		if tile_data:
+			# 检查这个单元格是否在可见列表中
+			if visible_tiles.get(cell, false):
+				# 如果在可见列表中，设置alpha为1（完全可见）
+				tile_data.modulate.a = 1.0
+			else:
+				# 如果不在可见列表中，逐渐减少alpha
+				tile_data.modulate.a = max(0.0, tile_data.modulate.a - delta * fade_speed)
+
+# 更新玩家视野
+func update_player_vision(player_position: Vector2, radius: float = 200.0):
+	if not tile_map:
+		return
+	
+	# 获取玩家所在的单元格
+	var player_cell = tile_map.local_to_map(player_position)
+	
+	# 计算视野半径对应的单元格数
+	var tile_size = tile_map.tile_set.tile_size
+	var radius_cells = int(radius / tile_size.x) + 1
+	
+	# 清空之前的可见瓦片列表
+	visible_tiles.clear()
+	
+	# 计算圆形视野内的所有单元格
+	for x in range(-radius_cells, radius_cells + 1):
+		for y in range(-radius_cells, radius_cells + 1):
+			var cell = player_cell + Vector2i(x, y)
+			var cell_world_pos = tile_map.map_to_local(cell)
+			
+			# 检查是否在视野范围内
+			if player_position.distance_to(cell_world_pos) <= radius:
+				# 检查这个位置是否有瓦片
+				if tile_map.get_cell_source_id(0, cell) != -1:
+					visible_tiles[cell] = true
+	
+	print("更新玩家视野: 找到 ", visible_tiles.size(), " 个可见瓦片")
 
 # 通过分组名称获取所有相关图层
 func _get_layers_from_groups():
@@ -203,15 +287,18 @@ func load_style():
 
 func travel_fire():
 	canvas_animation_player.play("blackscreen_intro")
-	await  canvas_animation_player.animation_finished
+	await canvas_animation_player.animation_finished
 	player.global_position = player.bonfire.check_point.global_position
 	canvas_animation_player.play("blackscreen_outro")
 
 func reset(position_node_path: String, file_path: String):
+<<<<<<< Updated upstream
 	print("position_node_path:", position_node_path)
 	print("file_path:", file_path)
+=======
+>>>>>>> Stashed changes
 	canvas_animation_player.play("blackscreen_intro")
-	await  canvas_animation_player.animation_finished
+	await canvas_animation_player.animation_finished
 	player.global_position = player.bonfire.check_point.global_position
 	
 	if not FileAccess.file_exists(file_path):
@@ -237,11 +324,17 @@ func reset(position_node_path: String, file_path: String):
 	parent_node.get_child(0).queue_free()
 	parent_node.add_child(scene_instance)
 	
+<<<<<<< Updated upstream
 	# 新场景加载后，重新获取图层分组
 	_get_layers_from_groups()
 	_init_visibility_system()
 	
 	print("成功加载场景到节点: ", position_node_path)
+=======
+	# 重新初始化可见性系统
+	_init_visibility_system()
+	
+>>>>>>> Stashed changes
 	player.bonfire = scene_instance.bonfire
 	scene_instance.bonfire.is_active = true
 	canvas_animation_player.play("blackscreen_outro")
