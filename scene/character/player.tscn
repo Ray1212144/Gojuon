@@ -5,11 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://ba3d6tlu7xloy" path="res://scene/fire_key.tscn" id="3_5utgv"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+motion_mode = 1
 script = ExtResource("1_hjaqi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
-process_callback = 0
+limit_enabled = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
